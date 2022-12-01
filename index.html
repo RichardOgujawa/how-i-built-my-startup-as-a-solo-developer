@@ -1,26 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="ms-application-name" content="Medium | How I built my Startup as a solo developer">
     <meta name="author" content="">
-    <title>'Coding this Medium Article Ep.1 | "How I built my Startup as a solo developer"'</title>
 
-    <link rel="shortcut icon" href="https://miro.medium.com/1*m-R_BkNf1Qjr1YbyOIJY2w.png" type="image/x-icon">
+    <title>Coding this Medium Article Ep.1 | "How I built my Startup as a solo developer"</title>
 
     <!--OG Tags-->
     <meta property="og-title" content='Coding this Medium Article Ep.1 | "How I built my Startup as a solo developer"'>
-    <meta property="og-image">
-    <meta property="og-description">
-    <meta property="og-url" content="">
+    <meta property="og-image"
+        content="http://www.appocalypse.co/wp-content/uploads/2019/04/Avengers-Endgame-End-Credits-Scene-Iron-Man-Banging-Sound.jpg">
+    <meta property="og-description"
+        content="This article will detail my journey from a Full Stack Engineer to Startup founder over the course of 10 months. Throughout this article I’ll explain the rationale behind choosing each part of my stack and how it played out in the end.">
+    <meta property="og-url"
+        content="https://medium.com/@sushrit.pk21/how-i-built-my-startup-as-a-solo-developer-8561bf7eebde">
     <meta property="og-type" content="article">
     <meta property="og-locale" content="en-GB">
 
+    <link rel="shortcut icon" href="https://miro.medium.com/1*m-R_BkNf1Qjr1YbyOIJY2w.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/main.css">
+
+    <script src="https://kit.fontawesome.com/d908522f87.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+
+
+    <main>
+        <footer>
+            <!--Profile picture-->
+            <picture>
+                <img src="https://miro.medium.com/fit/c/96/96/1*4cojMNj2q8Zszp9mdvGeag.jpeg"
+                    alt="Profile picture of Sushrit Pasupuleti" width="48" height="48">
+            </picture>
+            <!--Username-->
+            <div>
+                <p>Sushrit Pasupuleti</p>
+            </div>
+            <!--Social Media Links-->
+            <div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-link"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div>
+                    <!--Save Article Icon-->
+                    <div>
+                        <i class="fa fa-bookmark"></i>
+                    </div>
+
+                    <!--More Settings Icon-->
+                    <div>
+                        <i class="fa fa-ellipsis"></i>
+                    </div>
+
+                    <!--Meta data + Listen-->
+                    <div>
+                        <time datetime="2021-12-31">Dec 31, 2021</time>
+                        <span class="footer__floating-period"></span>
+                        <!--floating period-->
+                        <span><time datetime="PT5M">5 mins</time> read</span>
+                        <span class="footer__floating-period"></span>
+                        <!--floating period-->
+                        <span><i class="fa fa-play"></i>Listen</span>
+                    </div>
+        </footer>
+
+        <!--Article-->
+        <article>
+            <!--Introductory content of the article/webpage-->
+            <header>
+
+                <!--Title-->
+                <h1>How I built my Startup as a solo developer</h1>
+
+                <!--Main Image-->
+                <picture>
+                    <img src="https://miro.medium.com/max/1400/1*VfX9D92O5onZsL7QOyjxuw.gif"
+                        alt="Robert Downey Junior, as Tony Stark in the First Iron man movie hammering some metal in a dark cave with a flash-light behind him and a contained fire burning in the foreground to provide him with some light."
+                        width="700" height="293">
+                </picture>
+
+            </header>
+
+            <p> This article will detail my journey from a Full Stack Engineer to Startup founder over the course of 10
+                months. Throughout this article I’ll explain the rationale behind choosing each part of my stack and how
+                it played out in the end.</p>
+            <p>So strap in, it is going to be a long yet fun article!</p>
+            <h2>So what is my Startup about?</h2>
+            <p>Well, it took a couple of weeks to get a clean pitch drafted so I’ll lead with that.</p>
+            <p>
+                <a href="https://skillshack.dev/" target="_blank">skillShack(⚡);</a> is a community for software
+                professionals looking to
+                share the projects they are working on and
+                get feedback. From side projects to startups!
+            </p>
+            <picture>
+                <img src="https://miro.medium.com/max/1400/1*kb6yGdF2Biq6IgaE-RG7eA.png"
+                    alt="An ad for skillShack, a company whre you can learn how to code by building projects."
+                    width="700" height="394">
+            </picture>
+            <picture>
+                <img src="https://miro.medium.com/max/1400/1*d8GAGqzp7k4E6Y3GfyO6Mg.png"
+                    alt="Another ad for skillShack, which talks about how you can get your project in front of many eyes and get feedback."
+                    width="700" height="394">
+            </picture>
+            <picture>
+                <img src="https://miro.medium.com/max/1400/1*cNimmn5bhFfx9u5n33GPvQ.png"
+                    alt="Another ad for skillShack, which talks about how you can grow your network using their platform."
+                    width="700" height="394">
+            </picture>
+            <p>
+                With “<a href="https://skillshack.dev/" target="_blank">skillShack(⚡)</a>” I wanted to build a platform
+                for
+                developers to share the projects they are working on, and
+                for those stuck in tutorial hell provide a curated list of challenges that can be built into projects to
+                put
+                their skills to use.
+            </p>
+            <p>
+                It has been my firm belief since the start that you can only get better at Software Development by
+                actually
+                DEVELOPING SOFTWARE (obvious right ?) and yet most people engage in endless sprints of watching tutorial
+                after
+                tutorial to add new buzz words to their Resumes. Most coding-centric platforms online have catered to
+                the
+                problem-solving aspects of programming, which while giving you a good understanding of the fundamentals
+                of
+                the
+                language and engaging your intellect have diminishing returns after a while.
+            </p>
+            <p>
+                So I set out to build this platform with hopes of providing a safe space for developers to share their
+                projects,
+                get feedback from the community and learn from one another.
+            </p>
+
+            <h2>Deciding on a Stack</h2>
+
+            <!--!!NB: Remember to put a semicolon after your dt's with ::after-->
+
+            <dl id="finalize-tech-stack">
+                <dt>
+                    Once I wrote down all the features I would want to make the experience truly unique, I set out to
+                    finalize a
+                    tech stack. I needed the following attributes:
+                </dt>
+                <dd>Easy to Scale and Deploy</dd>
+                <dd>A Good ORM with a strong API and support for formatted output on Raw Queries. </dd>
+                <dd>React on the frontend (it’s 2021 or 2022 by the time you read this)</dd>
+                <dd>Excellent SEO Support</dd>
+                <dd>PWA Support</dd>
+                <dd>Admin tools that were served separately from the main website</dd>
+                <dd>Social Authentication</dd>
+                <dd>GitHub Integration so that users can link their repositories.</dd>
+                </dd>
+            </dl>
+            <p>For each requirement, I put together a list of possible technologies/frameworks.</p>
+            <h2>The Stack</h2>
+            <ul>
+                <li>Frontend: <a href="https://nextjs.org/">Next.js</a></li>
+                <li>Backend: <a href="https://expressjs.com/">Express.js</a></li>
+                <li>Database: PostgreSQL with Sequelize ORM</li>
+                <li>Admin Tools: <a href="https://marmelab.com/react-admin/">react-admin</a></li>
+                <li>DevOps: GitHub Actions, Vercel CLI, and Docker</li>
+                <li>Hosting:</li>
+                <li>AWS EC2 (Backend)</li>
+                <li>Vercel (Both Frontends)</li>
+            </ul>
+
+            <h2>Why Next.js ?</h2>
+            <p>
+                As stated earlier SEO was crucial for me, and with create-react-app you subscribe to Client-Side
+                Rendering which
+                will not play well with Web Crawlers of Search Engines (they do not execute JS).
+            </p>
+            <p>
+                Next.js supports <abbr title="Server Side Rendering">SSR</abbr>(Server Side Rendering), SSG (Static Site
+                Generation), and ISR (Incremental Static
+                Regeneration). I’ll summarize each in simple terms below:
+            </p>
+
+            <dl>
+                <div>
+                    <dt>
+                        <abbr title="Server Side Rendering">SSR</abbr>
+                    </dt>
+                    <dd>
+                        Essentially serves documents with all the components rendered and populated with necessary data
+                        (from
+                        APIs). This way a bot can see all the info without the need for JavaScript execution. This makes
+                        serving
+                        pages with no real-time updates like Blogs, Profile data etc simple and allows for good SEO.
+                    </dd>
+                </div>
+
+                <div>
+                    <dt>
+                        <abbr title="Static Site Generation">SSG</abbr>
+                    </dt>
+                    <dd>
+                        It serves purely static pages (No API data), and offers good SEO at the same time. Useful for
+                        things
+                        like documentation.
+                    </dd>
+                </div>
+
+                <div>
+                    <dt>
+                        <abbr title="Incremental Static Regeneration">ISR</abbr>
+                    </dt>
+                    <dd>
+                        It’s like SSR but it periodically refreshes the static Pages with new API data. Useful for
+                        things
+                        like blogs and profiles where updates may not be frequent but do happen and must be reflected.
+                        Bonus: Next.js and Vercel have the perfect ecosystem.
+                    </dd>
+                </div>
+            </dl>
+
+            <p>Bonus: Next.js and Vercel have the perfect ecosystem.</p>
+
+            <h2>Authentication: next-auth</h2>
+
+            <p>
+                It couples perfectly with Next.js, it is served as a serverless function via Next.js which fully
+                supports
+                them and Vercel does too in production, so no extra configurations. You can even remotely monitor the
+                function and check for errors through Vercel. It is perfect in every way, you should just look at their
+                website to learn more.
+            </p>
+
+            <p>
+                The docs were simple and I was able to set up Google and GitHub authentication in under an hour (had to
+                wait
+                for Google to sync callback URLs).
+            </p>
+
+            <h2>Component Library: material-ui</h2>
+
+            <p>
+                I started the project before the Tailwind hype train hit its peak. And I did eventually try it on
+                another
+                project, but it’s not my kind of thing. I’m very good at pure CSS already so I went with material-ui, it
+                comes with a good set of components out of the box and a few more from other community-made packages
+                like
+                treasury, pickers, etc.
+            </p>
+
+            <h2>Admin Tools: react-admin</h2>
+
+            <p>
+                It comes with a good set of tools out of the box it makes use of material-ui (so easier to customize and
+                share components). Plus you can easily assign roles and give restricted access to different aspects of
+                the
+                App.
+            </p>
+
+            <h2>Backend: Express.js</h2>
+
+            <p>
+                Express has been around since forever and it is pretty much the go-to for most people. I added a few
+                packages like express-sequelize-crud so that I could allow my admin tools to query it easily without the
+                need for more endpoints. Secured all the endpoints with JWT authentication and set up Role-Based
+                Permissions.
+            </p>
+
+            <h2>Database: PostgreSQL</h2>
+
+            <p>
+                This project was going to have a lot of interlinked tables, so No SQL was not going to cut it. I also
+                needed
+                support for JSON documents to store certain nested data (Resumes). PostgreSQL also supports Full-Text
+                Search
+                (FTS) out of the box which made it easier to build a feature-rich Search option.
+            </p>
+
+            <p>
+                Sequelize was good, it supported TS_Vectors out of the box which was necessary for me to build FTS
+                supported
+                documents. And the support for formatted Raw Queries made writing joins simpler (kind of a pain doing it
+                through the ORM’s native API).
+            </p>
+
+            <h2>Deployment</h2>
+
+            <dl>
+                <dt>So my deployment workflow goes as follows</dt>
+                <dd>Merge a Pull Request to main which triggers GitHub Actions.</dd>
+                <dd>Build Preview Deployments for the admin and main website on Vercel.</dd>
+                <dd>Once the Preview build is built successfully, promote it to production. (I get notifications for
+                    each step on Slack thanks to a sweet Slack Integration). </dd>
+                <dd>In parallel, a docker image is created with contents of the backend code and pushed to my EC2
+                    instance, where it's run with pm2. A script then performs necessary database migrations via
+                    sequelize-cli.</dd>
+            </dl>
+
+            <h2>Closing thoughts</h2>
+
+            <p>It was a great journey building out the whole project by myself, I learned a lot of things along the way including Canva and Figma. Spent a lot of time binging YC Startup School videos to figure out my pitch, website content. I also tweeted my entire journey on my Twitter (drop by and say hi! Replying on medium has been weird since forever), which was great because I got to connect with a lot of cool people.</p>
+
+            <p>I’m excited to close this article by saying <a href="https://skillshack.dev/" target="_blank">skillShack(⚡);</a> is live at <a href="https://skillshack.dev/" target="_blank">skillshack.dev</a> !</p>
+
+            <p>Would love to hear your thoughts in the comments and see you on the website!</p>
+        </article>
+
+    </main>
+
+
 </body>
+
 </html>

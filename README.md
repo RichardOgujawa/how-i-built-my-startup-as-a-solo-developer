@@ -1,5 +1,7 @@
 # Coding A Medium Article
 
+The article I'm working on today is [How I built my Startup as a solo developer by Sushrit Pasupuleti](https://medium.com/@sushrit.pk21/how-i-built-my-startup-as-a-solo-developer-8561bf7eebde)
+
 ## Why Am I Doing This? 🤷🏾‍♂️
 During the course of taking a deeper dive into HTML, primarily through taking courses by [Jen Kramer](https://www.linkedin.com/in/jen4web/) on [LinkedIn Learning](https://bit.ly/3VkpvwB) I realised that a lot of the HTML I had been writing before was simply just <strong>a coat hanger for my CSS</strong>. It was there simply to provide the content for my CSS to be able to style. I didn't really give much thought to things like <strong>accessibility, structure, semantics</strong>, choosing to care more about just having a live version of my build that <em>looked</em> right. 
 
@@ -9,3 +11,8 @@ For this project, I decided to code three [Medium](https://medium.com/) articles
 
 ## Some things I Learned in the course of doing this 👨🏾‍💻
 - OG Tags - which are tags used to control the display of a URL when shared on social media. [Learn more about OG Tags here](https://ahrefs.com/blog/open-graph-meta-tags/)
+- If you are writing a period of time, for example 5 minutes, you would need to prefix the datetime value with PT which stands for Period (P) and Time (T). This specifies that the period only consists of time and not a date. [More on how to use the time tag to represent durations in this article](https://stackoverflow.com/questions/51168022/what-does-pt-prefix-stand-for-in-duration)
+
+## Some questions I had based on the project
+- I made the attributes a definition list because to show that the unordered list is describing the attributes that he wanted to finalize his tech stack, [here](index.html/#finalize-tech-stack). Is this fine or should this have just been an unordered list?
+
