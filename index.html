@@ -28,9 +28,11 @@
 </head>
 
 <body>
-
-
+Ω`
     <main>
+        <!--Article-->
+        <article>
+
         <footer>
             <!--Profile picture-->
             <picture>
@@ -47,33 +49,41 @@
                     <li>
                         <a href="#">
                             <i class="fa fa-twitter"></i>
+                            <span class="sr-only">Share on Twitter.</span>
                         </a>
                     </li>
                     <li>
                         <a href="">
                             <i class="fa fa-facebook"></i>
+                            <span class="sr-only">Share on Facebook.</span>
                         </a>
                     </li>
                     <li>
                         <a href="">
                             <i class="fa fa-linkedin"></i>
+                            <span class="sr-only">Share on Linkedin.</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <button type="button">
                             <i class="fa fa-link"></i>
-                        </a>
+                            <span class="sr-only">Copy Link</span>
+                        </button>
                     </li>
                 </ul>
                 <div>
                     <!--Save Article Icon-->
                     <div>
-                        <i class="fa fa-bookmark"></i>
+                        <button type="button">
+                            <i class="fa fa-bookmark"></i>
+                        </button>
                     </div>
 
                     <!--More Settings Icon-->
                     <div>
-                        <i class="fa fa-ellipsis"></i>
+                        <button type="button"> 
+                            <i class="fa fa-ellipsis"></i>
+                        </button>
                     </div>
 
                     <!--Meta data + Listen-->
@@ -81,15 +91,19 @@
                         <time datetime="2021-12-31">Dec 31, 2021</time>
                         <span class="footer__floating-period"></span>
                         <!--floating period-->
-                        <span><time datetime="PT5M">5 mins</time> read</span>
+                        <p><time datetime="PT5M">5 mins</time> <span>read</span></p>
                         <span class="footer__floating-period"></span>
                         <!--floating period-->
-                        <span><i class="fa fa-play"></i>Listen</span>
+                        <span>
+                            <button type="button">
+                                <i class="fa fa-play"></i>
+                                <span>Listen</span>
+                            </button>
+                        </span>
                     </div>
         </footer>
 
-        <!--Article-->
-        <article>
+        
             <!--Introductory content of the article/webpage-->
             <header>
 
@@ -329,7 +343,9 @@
 
     </main>
 
-
+    <footer>
+        <p><small>This content is the property of <a href="https://medium.com/" target="_blank">Medium.com</a></small></p>
+    </footer>
 </body>
 
 </html>
