@@ -405,7 +405,7 @@ nav ul span {
 }
 /*Footer*/
 article {
-    width: min(700px, 60%);
+    width: min(700px, 80%);
     
     margin-inline: 25vw;
 }
@@ -509,5 +509,8 @@ footer {
 @media screen and (max-width: 1050px){
     nav {
         display: none;
+    }
+    article {
+        margin-inline: auto;
     }
 }
