@@ -14,5 +14,5 @@ For this project, I decided to code three [Medium](https://medium.com/) articles
 - If you are writing a period of time, for example 5 minutes, you would need to prefix the datetime value with PT which stands for Period (P) and Time (T). This specifies that the period only consists of time and not a date. [More on how to use the time tag to represent durations in this article](https://stackoverflow.com/questions/51168022/what-does-pt-prefix-stand-for-in-duration)
 
 ## Some questions I had based on the project
-- I made the attributes a definition list because to show that the unordered list is describing the attributes that he wanted to finalize his tech stack, [here](index.html/#finalize-tech-stack). Is this fine or should this have just been an unordered list?
+- 
 
