@@ -504,7 +504,6 @@ footer {
     padding-block: 1.5px;
     border-top: 1px solid hsl(var(--clr-neutral-200)/50%);
     place-content: center;
-    color: red;
 }
 
 @media screen and (min-width: 1024px){
