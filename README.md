@@ -14,5 +14,5 @@ For this project, I decided to code three [Medium](https://medium.com/) articles
 - If you are writing a period of time, for example 5 minutes, you would need to prefix the datetime value with PT which stands for Period (P) and Time (T). This specifies that the period only consists of time and not a date. [More on how to use the time tag to represent durations in this article](https://stackoverflow.com/questions/51168022/what-does-pt-prefix-stand-for-in-duration)
 
 ## Some questions I had based on the project
-- 
+- I was unable to load multiple fonts in my CSS. I got the fonts from the Medium website by using [this method](https://www.makeuseof.com/how-to-find-webpages-font-inspect-element-tool-browser-extensions/#:~:text=Go%20to%20the%20webpage.,fonts%20used%20on%20the%20webpage.), but was unable to load the Sohne font for the heading text properly for some reason. Any ideas?
 

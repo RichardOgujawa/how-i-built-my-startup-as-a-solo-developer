@@ -1,4 +1,40 @@
 @import url(reset.css);
+@font-face {
+    font-family: 'Sohne';
+    src: url("https://glyph.medium.com/font/b492c44/3k-4f_4h-52_54-6bt_6bv-6c3_6c5-6c7_6ca-6cb_6ce-6ch_6cj-6cl_6cn-nvnj/sohne-400-normal.woff"
+    );
+    font-weight: 400; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sohne';
+    src: url("https://glyph.medium.com/font/df9ba7f/0-3j_4g_53_6bu_6c4_6c8_6c9_6cc_6cd_6ci_6cm/sohne-500-normal.woff");
+    font-weight: 500; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sohne';
+    src: url("https://glyph.medium.com/font/df9ba7f/0-3j_4g_53_6bu_6c4_6c8_6c9_6cc_6cd_6ci_6cm/sohne-700-normal.woff");
+    font-weight: 700; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'source-serif-pro';
+    src: url("https://glyph.medium.com/font/76c214a/0-3j_4g_53_6bu_6c4_6c8_6c9_6cc_6cd_6ci_6cm/source-serif-pro-400-italic.woff");
+    font-weight: 400; 
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'source-serif-pro';
+    src: url("https://glyph.medium.com/font/8e059b2/0-3j_4g_53_6bu_6c4_6c8_6c9_6cc_6cd_6ci_6cm/source-serif-pro-400-normal.woff");
+    font-weight: 400; 
+    font-style: normal;
+} 
+
 
 /*Variables
 --------------------------------*/
@@ -27,13 +63,13 @@
     font-size: 20px;
 
     /*--font-family--*/
-    --ff-base: Times, serif;
-    --ff-heading: Arial, sans-serif;
+    --ff-base: source-serif-pro;
+    --ff-heading: 'Sohne';
 
     /*--font-weight--*/
-    --fw-light: 200;
-    --fw-regular: 400;
-    --fw-bold: 600;
+    --fw-light: 400;
+    --fw-regular: 500;
+    --fw-bold: 700;
 
     /*Transition*/
     --transition: 0.4s ease;
@@ -69,7 +105,7 @@
     position: absolute;
 }
 
-/*Custom*/
+/*Custom Utilities*/
 /*--Typography--*/
 .italics {
     font-style: italic;
@@ -81,7 +117,10 @@
 
 /*--Stylings*/
 .border-left {
+    width: calc(100% + 1em);
+    margin-left: -1em;
     padding-left: 1em;
+    margin-block: 2em;
     border-left: 3.5px solid hsl(var(--clr-neutral-900));
 }
 
@@ -133,7 +172,7 @@
 
     cursor: pointer;
 }
-.tooltip_divider {
+.tooltip-divider {
     width: 1.5px; 
     height: 22px;
 
@@ -200,29 +239,34 @@ h1,
 h2, 
 p, 
 ul {
-    margin-block: 1em;
+    margin-block: 0.5em;
 }
 
+/*Headings*/
 h1, 
 h2, 
 h3, 
 h4 {
-    font-family: var(--ff-heading);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: var(--fw-bold);    
 }
 
-h2 {
-    font-size: var(--fs-500);
-}
-
-img {
-    height: auto;
-}
-
-/*Headings*/
 h1 {    
     font-size: var(--fs-900);
     font-weight: var(--fw-bold);
 }
+
+h2 {
+    margin-top: 3em;
+    font-size: var(--fs-500);
+}
+
+
+/*Images*/
+img {
+    height: auto;
+}
+
 /*Links*/
 a {
     color:hsl(var(--clr-neutral-900));
@@ -235,6 +279,7 @@ a:visited {
 hr {
     display: none;
 }
+
 
 /*Highlights*/
 mark {
@@ -253,6 +298,18 @@ dt::after {
 abbr {
     text-decoration: none;
 }
+
+/*Custom Attributes*/
+[data-pic="article-pic"] {
+    margin-block: 2.5em;
+}
+
+[data-ul="article-ul"] {
+    margin-block: 1.1em;
+    margin-left: 1.5em;
+    width: calc(100%-1.5em);
+}
+
 
 
 /*Custom Stylings

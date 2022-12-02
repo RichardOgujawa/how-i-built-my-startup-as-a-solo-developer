@@ -45,9 +45,6 @@
 <body>
 
     <nav role="main navigation">
-        <!-- <picture class="nav__picture--logo">
-            <img class="nav__img--logo" src="https://miro.medium.com/1*m-R_BkNf1Qjr1YbyOIJY2w.png" alt="Medium logo" width="45" height="45">
-        </picture> -->
 
         <svg viewBox="0 0 1043.63 592.71" class="dc bk">
             <g data-name="Layer 2">
@@ -164,7 +161,7 @@
                             <button type="button" aria-label="Share on twitter.">
                                 <i class="fa fa-twitter"></i>
                             </button>
-                            <span class="tooltip_divider"></span>
+                            <span class="tooltip-divider"></span>
                             <span>Top highlight</span>
                         </div>
                     </div>
@@ -202,19 +199,20 @@
                 get feedback. From side projects to startups!
             </p>
 
+            <!--The data-pic attribute is to identify images specificially posted by the author to this particular article as opposed to surrounding images uploaded on the site by Medium.-->
             <picture>
-                <img src="https://miro.medium.com/max/1400/1*kb6yGdF2Biq6IgaE-RG7eA.png"
+                <img data-pic="article-pic" src="https://miro.medium.com/max/1400/1*kb6yGdF2Biq6IgaE-RG7eA.png"
                     alt="An ad for skillShack, a company whre you can learn how to code by building projects."
                     width="700" height="394">
             </picture>
 
             <picture>
-                <img src="https://miro.medium.com/max/1400/1*d8GAGqzp7k4E6Y3GfyO6Mg.png"
+                <img data-pic="article-pic" src="https://miro.medium.com/max/1400/1*d8GAGqzp7k4E6Y3GfyO6Mg.png"
                     alt="Another ad for skillShack, which talks about how you can get your project in front of many eyes and get feedback."
                     width="700" height="394">
             </picture>
             <picture>
-                <img src="https://miro.medium.com/max/1400/1*cNimmn5bhFfx9u5n33GPvQ.png"
+                <img data-pic="article-pic" src="https://miro.medium.com/max/1400/1*cNimmn5bhFfx9u5n33GPvQ.png"
                     alt="Another ad for skillShack, which talks about how you can grow your network using their platform."
                     width="700" height="394">
             </picture>
@@ -252,7 +250,10 @@
             <p>Once I wrote down all the features I would want to make the experience truly unique, I set out to
                 finalize a tech stack. I needed the following attributes:</p>
 
-            <ul>
+
+            <!--The data-ul attribute is to identify ul's specificially posted by the author to this particular article as opposed to surrounding ul's on the page like on the navigation links in the main menu of the website-->
+
+            <ul data-ul="article-ul">
                 <li>Easy to Scale and Deploy</li>
                 <li>A Good ORM with a strong API and support for formatted output on Raw Queries. </li>
                 <li>React on the frontend (it’s 2021 or 2022 by the time you read this)</li>
@@ -271,7 +272,7 @@
             <!--Shift in topic-->
             <h2>The Stack</h2>
 
-            <ul>
+            <ul data-ul="article-ul">
                 <li>Frontend: <a href="https://nextjs.org/" target="_blank">Next.<abbr title="javascript">js</abbr></a></li>
                 <li>Backend: <a href="https://expressjs.com/" target="_blank">Express.<abbr title="javascript">js</abbr></a></li>
                 <li>Database: PostgreSQL with Sequelize ORM</li>
@@ -431,7 +432,7 @@
             <h2>Deployment</h2>
 
             <p>So my deployment workflow goes as follows</p>
-            <ul>
+            <ul data-ul="article-ul">
                 <li>Merge a Pull Request to main which triggers GitHub Actions.</li>
                 <li>Build Preview Deployments for the admin and main website on Vercel.</li>
                 <li>Once the Preview build is built successfully, promote it to production. (I get notifications for
