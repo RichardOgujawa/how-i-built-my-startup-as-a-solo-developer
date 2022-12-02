@@ -405,7 +405,7 @@ nav ul span {
 }
 /*Footer*/
 article {
-    width: min(700px, 80%);
+    width: min(700px, calc(80% + 1em));
     
     margin-inline: 25vw;
 }
