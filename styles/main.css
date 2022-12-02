@@ -54,6 +54,7 @@
     /*Typography*/
     /*--font-size--*/
     --fs-100: 0.45rem;
+    --fs-200: 0.7rem;
     --fs-300: 0.9rem;
     --fs-400: 1rem;
     --fs-500: 1.1rem;
@@ -241,8 +242,7 @@ p,
 ul {
     margin-block: 0.5em;
 }
-
-/*Headings*/
+/*Typography*/
 h1, 
 h2, 
 h3, 
@@ -259,6 +259,9 @@ h1 {
 h2 {
     margin-top: 3em;
     font-size: var(--fs-500);
+}
+small {
+    font-size: var(--fs-200);
 }
 
 
@@ -298,6 +301,7 @@ dt::after {
 abbr {
     text-decoration: none;
 }
+
 
 /*Custom Attributes*/
 [data-pic="article-pic"] {
