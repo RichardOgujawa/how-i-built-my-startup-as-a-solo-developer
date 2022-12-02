@@ -319,7 +319,7 @@ nav {
   width: 7em;
   min-height: 100vh;
 
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -405,9 +405,9 @@ nav ul span {
 }
 /*Footer*/
 article {
-    width: min(700px, 85%);
+    width: min(700px, 60%);
     
-    margin-inline: 25% auto;
+    margin-inline: 25vw;
 }
 .article__footer{
     max-width: 700px;
@@ -506,8 +506,8 @@ footer {
     place-content: center;
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (max-width: 1050px){
     nav {
-        display: flex;
+        display: none;
     }
 }
