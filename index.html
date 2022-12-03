@@ -46,7 +46,7 @@
 
 <body>
 
-    <nav class="grid-group" role="main menu">
+    <nav role="main menu">
         <div class="nav__container flex-group">
             <a href="index.html" aria-label="Medium logo">
             
@@ -559,31 +559,41 @@
     </main>
 
     <div class="right-panel">
-        <div class="right-panel__container">
+        <div class="right-panel__container grid-group">
             <div class="flex-group">
                 <button>Resume Membership</button>
-                <input type="search">
+                <label for="search"><span class="sr-only">Search</span>
+                    <i class="fa fa-search"></i>
+                    <input id="search" name="search-query" type="search" placeholder="Search">
+                </label>
             </div>
-            <section>
-                <picture data-user="profile-picture" class="article__picture">
-                    <img class="article__img"
-                        src="https://miro.medium.com/fit/c/96/96/1*4cojMNj2q8Zszp9mdvGeag.jpeg"
-                        alt="Profile picture of Sushrit Pasupuleti" width="48" height="48">
-                </picture>
-                <p data-user="profile-pic">Sushrit Pasupuleti</p>
-                <p data-user="follower-count">769 Followers</p>
+
+            <!--Author's profile-->
+            <section class="right-panel__author-info grid-group">
+                <a href="#">
+                    <picture data-user="profile-picture" class="article__picture">
+                        <img class="article__img"
+                            src="https://miro.medium.com/fit/c/96/96/1*4cojMNj2q8Zszp9mdvGeag.jpeg"
+                            alt="Profile picture of Sushrit Pasupuleti" width="88" height="88">
+                    </picture>
+                </a>
+                <div class="grid-group">
+                    <a href="#" class="right-panel__author-username" data-user="username">Sushrit Pasupuleti</a>
+                    <span class="followers">769 Followers</span>
+                </div>
                 <p data-user="bio">
                     22 | Startup Founder | Fullstack Unicorn | Coder | Blogger | Speaker | Sketcher… err 🤔 and more 🙃. Building skillShack! <a href="https://sushritpasupuleti.github.io" target="_blank">https://sushritpasupuleti.github.io</a>
                 </p>
                 <div>
-                    <button>
+                    <button type="button">
                         Follow
                     </button>
-                    <button>
-                        <i class="fa fa-email"></i>
+                    <button type="button" aria-label="Subscribe to get an email whenever Sushrit posts another article.">
+                        <i class="fa fa-envelope"></i>
                     </button>
                 </div>
             </section>
+
             <!--More from Medium section-->
             <aside>
                 <h2></h2>
@@ -592,8 +602,8 @@
                     </div>
                 </section>
             </aside>
-            <footer>
-                <ul>
+            <footer class="right-panel__footer">
+                <ul class="flex-group--wrap">
                     <li><a href="#">Help</a></li>
                     <li><a href="#">Status</a></li>
                     <li><a href="#">Write</a></li>
