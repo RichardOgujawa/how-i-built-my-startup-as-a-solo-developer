@@ -44,7 +44,7 @@
 
     --clr-accent-100: 113deg 30% 93%;
     --clr-accent-500: 113deg 30% 77%;
-    --clr-accent-900: 113deg 30% 50%;
+    --clr-accent-900: 119deg 71% 31%;
 
     --clr-neutral-100: 0 0% 100%;
     --clr-neutral-200: 0 0% 85%;
@@ -53,7 +53,8 @@
 
     /*Typography*/
     /*--font-size--*/
-    --fs-100: 0.45rem;
+    --fs-100: 0.3rem;
+    --fs-150: 0.7rem;
     --fs-200: 0.8rem;
     --fs-300: 1rem;
     --fs-400: 1.1rem;
@@ -81,17 +82,17 @@
 /*Standard*/
 .flex-group {
     display: flex; 
-    gap: var(--gap);
+    gap: var(--flex-gap);
 }
 .flex-group-wrap {
     display: flex; 
-    gap: var(--gap);
+    gap: var(--flex-gap);
     flex-wrap: wrap;
 }
 
 .grid-group {
     display: grid; 
-    gap: var(--gap);
+    gap: var(--grid-gap);
 }
 
 .sr-only {
@@ -179,7 +180,7 @@
     background-color: hsl(var(--clr-neutral-900));
 }
 .tooltip-container {
-    --gap: 0.5em;
+    --flex-gap: 0.5em;
     align-items: center;
 }   
 .tooltip button {
@@ -272,6 +273,7 @@ h4 {
 h1 {    
     font-size: var(--fs-900);
     font-weight: var(--fw-bold);
+    margin-block: 1.25em;
 }
 
 h2 {
@@ -371,9 +373,8 @@ nav svg {
 
     place-content: center;
 }
-nav ul, 
-footer ul {
-    --gap: 1.5em;
+:is(nav, footer) ul {
+    --flex-gap: 1.5em;
     width: fit-content; 
     
     flex-direction: column; 
@@ -431,19 +432,19 @@ article {
     margin-inline: 25vw;
 }
 .article__footer{
-    --gap: 0.3em;
-    row-gap: var(--gap);
+    --grid-gap: 0.5em;
+    gap: var(--grid-gap);
     max-width: 700px;
     height: fit-content;
     margin-top: 7vh;
 
-    grid-template-columns: 1fr 6fr 1.5fr 0.5fr 0.5fr;
+    grid-template-columns: 1fr 6fr 3fr 0.5fr 0.5fr;
     grid-template-rows: 50% 50%;
     grid-template-areas: 
     "author-picture author-name author-socials bookmark more-settings"
     "author-picture meta-data . . .";
 }
-.article__picture {
+.article__picture-container {
     grid-area: author-picture;
 
     place-items: center;
@@ -459,47 +460,60 @@ article {
 
 .article__author-username {
     margin: 0em;
-    line-height: 1;
 
-    
+    line-height: 1;
 }
 
 .article__links-container {
     grid-area: author-socials;
 
-    outline: 3px solid blue;
     align-items:end;
     grid-template-columns: 1fr 5fr 2fr 2fr;
 }
 .article__links-container ul {
+    --flex-gap: 0.6em;
     width: 100%;
     margin: 0em;
     
     flex-direction: row;
     flex-wrap: nowrap;
-
     align-content: end;
-    
+    justify-content: center;
 }
-.article__links-container i {
-    display: inline;
-    font-size: 1rem;
+.article__links-container a {
+    text-decoration: none;
+}
+.article__links-container i,
+:is(.article__bookmark, .article__settings) button{
+    font-size: var(--fs-200);
 
     color: hsl(var(--clr-neutral-400)/50%);
     align-self: end;
 }
-.article__links-container button {
+
+:is(.article__bookmark, .article__settings) button:is(:hover, :focus) > i {
+    color: hsl(var(--clr-neutral-900));
+}
+
+article > footer button {
     border: none;
     background-color: transparent; 
 }
 .article__bookmark {
     grid-area: bookmark;
+
+    align-items: end;
 }
-.article__settigs {
+
+:is(.article__bookmark, .article__settings) button i {
+    color: hsl(var(--clr-neutral-400));
+}
+.article__settings {
     grid-area: more-settings;
+
 }
 .article__meta-data {
-    --gap: 0.5em;
+    --flex-gap: 0.5em;
     grid-area: meta-data;
     flex-direction: row;
     align-items: start;
@@ -511,30 +525,39 @@ footer time,
 .article__meta-data > div > time+span,
 .footer__floating-period{
     color: hsl(var(--clr-neutral-400));
+
+    font-size: var(--fs-150);
 }
 article > footer:not(img) {
     font-size: var(--fs-200);
     line-height: 1em;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .article__meta-data button{
     border: none;
 
+    display: flex; 
+    align-items: center;
+
+    font-size: var(--fs-150);
+
     background: transparent; 
     color: hsl(var(--clr-accent-900));
+
     cursor: pointer;
 }
 .article__meta-data button span:first-child {
-    padding: 2px;
+    padding: 6px;
     aspect-ratio: 1/1;
-    border-radius: 100vw;
+    border-radius: 50%;
+
     display: grid;
-    place-items: center;
+    place-content: center;
     
     font-size: var(--fs-100);
     
     color: hsl(var(--clr-neutral-100));
     background-color: hsl(var(--clr-accent-900));
-    
 }
 .article__meta-data button i {    
     font-size: var(--fs-100);
@@ -544,9 +567,10 @@ article > footer:not(img) {
 }    
 
 
+
 footer:not(article > footer) {
     width: 100%; 
-    padding-block: 1.5px;
+    padding-block: 0.5em;
     border-top: 1px solid hsl(var(--clr-neutral-200)/50%);
     place-content: center;
 }

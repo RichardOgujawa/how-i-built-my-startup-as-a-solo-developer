@@ -80,10 +80,14 @@
 
             <footer class="article__footer grid-group">
                 <!--Profile picture-->
-                <picture class="article__picture grid-group">
-                    <img class="article__img" src="https://miro.medium.com/fit/c/96/96/1*4cojMNj2q8Zszp9mdvGeag.jpeg"
-                        alt="Profile picture of Sushrit Pasupuleti" width="48" height="48">
-                </picture>
+                <div class="article__picture-container grid-group">
+                    <a href="#">
+                        <picture class="article__picture">
+                            <img class="article__img" src="https://miro.medium.com/fit/c/96/96/1*4cojMNj2q8Zszp9mdvGeag.jpeg"
+                                alt="Profile picture of Sushrit Pasupuleti" width="48" height="48">
+                        </picture>
+                    </a>
+                </div>
 
                 <!--Username-->
                 <div class="article__author-username-container">
@@ -117,14 +121,14 @@
                 </div>
 
                 <!--Bookmark Article Icon-->
-                <div class="article___bookmark">
+                <div class="article__bookmark grid-group">
                     <button type="button" aria-label="Bookmark">
                         <i class="fa fa-bookmark"></i>
                     </button>
                 </div>
 
                 <!--More Settings Icon-->
-                <div class="article___settings">
+                <div class="article__settings grid-group">
                     <button type="button" aria-lable="More Settings">
                         <i class="fa fa-ellipsis"></i>
                     </button>
@@ -132,7 +136,7 @@
 
                 <!--Meta data + Listen Btn-->
                 <div class="article__meta-data flex-group">
-                    <time class="article__publishing-date" datetime="2021-12-31">Dec 31, 2021</time>
+                    <time class="article__publishing-date" datetime="2021-12-30">Dec 30, 2021</time>
                     <span class="footer__floating-period">&middot;</span>
                     <div><time class="article__reading-length" datetime="PT5M">5 mins</time> <span>read</span></div>
                     <span class="footer__floating-period">&middot;</span>
