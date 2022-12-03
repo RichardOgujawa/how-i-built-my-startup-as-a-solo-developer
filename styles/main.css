@@ -744,7 +744,7 @@ footer:not(article > div > footer) {
     }
     .article__footer {
         grid-template-columns: 60px 30px 12fr;
-        row-gap: 0.5em;
+        row-gap: 0.75em;
         grid-template-rows: 25% 25% 1fr;
         grid-template-areas: 
         "author-picture author-name author-name"
