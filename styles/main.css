@@ -109,6 +109,19 @@
     position: absolute;
 }
 
+/*Buttons*/
+.btn {
+    cursor: pointer;
+}
+.black {
+    color: hsl(var(--clr-neutral-100));
+    background-color: hsl(var(--clr-neutral-900));
+}
+.white {
+    color: hsl(var(--clr-accent-900));
+    background-color: transparent;
+}
+
 /*Custom Utilities*/
 /*--Typography--*/
 .italics {
@@ -497,7 +510,7 @@ main {
     grid-template-columns: 8.5rem auto 25rem;
 }
 article {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     width: min(700px, calc(75% + 1em));
     
     margin-inline: auto;
@@ -723,12 +736,13 @@ article > div > footer:not(img) {
     cursor: pointer;
 }
 
+/*Footer with Copyright*/
 .footer-grid {
     grid-template-columns: 8.5rem auto 25rem;
 }
 footer:not(article > div > footer) {
     width: 100%; 
-    padding-block: 0.5em 6.5em;
+    padding-block: 0.5em 3.8em;
     border-top: 1px solid hsl(var(--clr-neutral-200)/50%);
 
     place-content: center;
@@ -746,7 +760,7 @@ footer:not(article > div > footer) a {
     padding: 0.5em 1.25em;
     
     position: fixed; 
-    inset: auto auto 4rem 50%;
+    inset: auto auto 6rem 50%;
     transform: translateX(-50%);
     
     font-size: var(--fs-200);
@@ -944,7 +958,7 @@ label > i{
     }
     .mobile-nav {
         width: 100vw; 
-        height: 6vh;
+        height: 8vh;
         border-top: 1px solid hsl(var(--clr-neutral-200)/50%);
         
         display: flex;
@@ -1044,7 +1058,7 @@ label > i{
     .topbar-nav {
         padding-inline: calc(3% + 0.5em);
         width: 100vw; 
-        height: 6vh;
+        height: 8vh;
         border-top: 1px solid hsl(var(--clr-neutral-200)/50%);
         
         display: flex; 
@@ -1072,12 +1086,11 @@ label > i{
         padding: 0.5em 0.75em;
 
         font-size: var(--fs-150);
-
-        color: hsl(var(--clr-neutral-100));
-        background-color: hsl(var(--clr-neutral-900));
+        
     }
-
-    .topbar-nav button:last-child {
+    
+    .topbar-nav button:nth-child(2),
+    .topbar-nav button:last-child{
         display: none;
     }
 }
@@ -1086,6 +1099,27 @@ label > i{
     body {
         font-size: var(--fs-300);
     }
+}
+
+@media screen and (max-width:724px){
+    .topbar-nav button:last-child{
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width:599px){
+    /* Toggle Display
+    ------------------------------------*/
+    .topbar-nav button:nth-child(2)
+    {
+        display: inline-block;
+    }
+    .topbar-nav button:first-child{
+        display: none;
+    }
+    
+    /* CSS changes
+    ------------------------------------*/
 }
 
 @media screen and (max-width:414px){
