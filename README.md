@@ -21,6 +21,7 @@ I've been using Medium for a long time but never actually thought about the mino
 - OG Tags - which are tags used to control the display of a URL when shared on social media. [Learn more about OG Tags here](https://ahrefs.com/blog/open-graph-meta-tags/)
 - If you are writing a period of time, for example 5 minutes, you would need to prefix the datetime value with PT which stands for Period (P) and Time (T). This specifies that the period only consists of time and not a date. [More on how to use the time tag to represent durations in this article](https://stackoverflow.com/questions/51168022/what-does-pt-prefix-stand-for-in-duration)
 - You have to have a good memory to be a good coder. If you forget that you had a margin on all your ul elements for example, you may get frustrated when you find that you can't align the a specific ul to the end of the it's container. 
+- You can use text-align to center not only text and images but also HRs 
 
 ## Some questions I had based on the project
 - I was unable to load multiple fonts in my CSS. I got the fonts from the Medium website by using [this method](https://www.makeuseof.com/how-to-find-webpages-font-inspect-element-tool-browser-extensions/#:~:text=Go%20to%20the%20webpage.,fonts%20used%20on%20the%20webpage.), but was unable to load the Sohne font for the heading text properly for some reason. Any ideas?

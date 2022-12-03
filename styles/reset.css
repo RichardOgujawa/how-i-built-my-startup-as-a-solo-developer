@@ -1,7 +1,7 @@
 /*
 Smooth Scroll behaviour for anchor links
 */
-html {
+html {  
     scroll-behavior: smooth;
 }
 

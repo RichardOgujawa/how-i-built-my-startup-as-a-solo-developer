@@ -54,7 +54,7 @@
     /*Typography*/
     /*--font-size--*/
     --fs-100: 0.3rem;
-    --fs-150: 0.7rem;
+    --fs-150: 0.67rem;
     --fs-200: 0.8rem;
     --fs-300: 1rem;
     --fs-400: 1.1rem;
@@ -66,7 +66,7 @@
 
     /*--font-family--*/
     --ff-base: source-serif-pro;
-    --ff-heading: 'Sohne';
+    --ff-accent: Arial, Helvetica, sans-serif;
 
     /*--font-weight--*/
     --fw-light: 400;
@@ -84,7 +84,7 @@
     display: flex; 
     gap: var(--flex-gap);
 }
-.flex-group-wrap {
+.flex-group--wrap {
     display: flex; 
     gap: var(--flex-gap);
     flex-wrap: wrap;
@@ -131,14 +131,17 @@
     width: fit-content;
 
     position: relative;
-
-    cursor: pointer;
 }
 
 .tooltip-parent:hover>.anim-up {
     display: block;
 
     animation: pop-up forwards 0.1s ease-out;
+}
+.tooltip-parent:hover>.anim-right {
+    display: block;
+
+    animation: pop-right forwards 0.1s ease-out;
 }
 .tooltip-parent:hover>.anim-down {
     display: block; 
@@ -147,14 +150,14 @@
 }
 @keyframes pop-up {
     0% {
-        transform: translate(-50%, -115%);
+        transform: translate(-50%, -100%);
     }
 
     100% {
-        transform: translate(-50%, -125%);
+        transform: translate(-50%, -110%);
     }
 }
-/* @keyframes pop-down {
+/* @keyframes pop-right {
     0% {
         transform: translate(-50%, -115%);
     }
@@ -164,23 +167,32 @@
     }
 } */
 .tooltip {
-    padding: 0.5em;
+    padding: 0.8em;
     box-sizing: border-box;
     border-radius: 0.15em;
 
     display: none;
- 
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -125%);
 
+    font-size: var(--fs-150);
 
     color: hsl(var(--clr-neutral-100));
     background-color: hsl(var(--clr-neutral-900));
 }
+
+.anim-up {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -125%);
+}
+.anim-right {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(25%, -50%);
+}
 .tooltip-container {
-    --flex-gap: 0.5em;
+    --flex-gap: 0.75em;
     align-items: center;
 }   
 .tooltip button {
@@ -209,10 +221,11 @@
 }
 
 /*Triangle*/
-.tooltip-container::after {
+/*For tooltips that are animating up*/
+.anim-up > .tooltip-container::after {
     content: '';
-    width: 1.4em;
-    height: 0.75em;
+    width: 2.5em;
+    height: 1.05em;
     clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
 
     position: absolute;
@@ -225,7 +238,7 @@
 }
 
 /*This is to provide some area below the tooltip so it doesn't disappear when you try and hover on it. I tried doing this with a simply border-bottom on the actual tool-tip but I realised that it wouldn't end up being transparent, and making it white would work for this example, but wouldn't be easily re-usable on other parts of the site.*/
-.tooltip-container::before {
+.anim-up > .tooltip-container::before {
     content: '';
     width: calc(100% + 1em); 
     height: 1em; 
@@ -240,11 +253,47 @@
     cursor: auto;
 }
 
+/*For tooltips that are animating right*/
+.anim-right > .tooltip-container::after {
+    content: '';
+    height: 1.5em;
+    width: 1.1em;
+    clip-path: polygon(100% 0%, 100% 100%, 0% 50%);
+
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 0%;
+    transform: translate(-130%, -50%);
+
+    background-color: hsl(var(--clr-neutral-900));
+
+    cursor: auto;
+}
+
+.anim-right > .tooltip-container::before {
+    content: '';
+    width: 1.3em; 
+    height: calc(100% + 1em); 
+    
+    position: absolute; 
+    top: -0.5em; 
+    left: -0.5em;
+    transform: translateX(-110%);
+
+    background-color: transparent;
+
+    cursor: auto;
+}
+/*For tooltips that are animating down*/
+/*For tooltips that are animating left*/
+
+
 
 /*Global Stylings
 --------------------------------*/
 body {
-    font-family: var(--ff-base);
+    font-family: var(--ff-accent);
     font-size: var(--fs-400);
     color: hsl(var(--clr-neutral-900));
 }
@@ -266,13 +315,11 @@ h1,
 h2, 
 h3, 
 h4 {
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: var(--fw-bold);    
 }
 
 h1 {    
     font-size: var(--fs-900);
-    font-weight: var(--fw-bold);
     margin-block: 1.25em;
 }
 
@@ -322,7 +369,6 @@ abbr {
     text-decoration: none;
 }
 
-
 /*Custom Attributes*/
 [data-pic="article-pic"] {
     margin-block: 2.5em;
@@ -342,10 +388,11 @@ abbr {
 nav {
   width: 7em;
   min-height: 100vh;
+  padding: 1em;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   padding-block: 3em 1.5em;
 
@@ -371,29 +418,29 @@ nav svg {
 .nav__links-container {
     width: 100%; 
 
-    place-content: center;
+    place-content: end;
 }
 :is(nav, footer) ul {
     --flex-gap: 1.5em;
-    width: fit-content; 
+    width: fit-content;
     
     flex-direction: column; 
-    align-items: center;
-    
     font-size: var(--fs-500);
     
     list-style: none;
 }
 nav ul li {
-    width: 100%;
-    text-align: center;
+    /* width: 100%; */
+    text-align: end;
 }
 nav ul a {
     display: block;
+    padding-inline: 1em 0em;
     
     cursor: pointer;
 }
 nav ul i {
+    font-size: var(--fs-400);
     color: hsl(var(--clr-neutral-400)/50%);
     transition: var(--transition);
 }
@@ -403,12 +450,12 @@ nav ul a:hover > i {
 
 /*Nav horizontal rule*/
 nav ul span {
-    width: 100%;
-    height: 1.5px; 
+    width: 60%;
+    height: 1px; 
     
     display: inline-block;
 
-    background: hsl(var(--clr-neutral-400)/50%);
+    background: hsl(var(--clr-neutral-400)/30%);
 }
 
 /*--Nav Profile Pic*/
@@ -431,23 +478,31 @@ article {
     
     margin-inline: 25vw;
 }
+.article__footer-container {
+    margin-top: 7vh;
+}
+.article__footer-container button{
+    background: none;
+    border: none;
+}
 .article__footer{
     --grid-gap: 0.5em;
     gap: var(--grid-gap);
+    column-gap: 0em;
     max-width: 700px;
     height: fit-content;
-    margin-top: 7vh;
 
-    grid-template-columns: 1fr 6fr 3fr 0.5fr 0.5fr;
+    flex-basis: 100%;
+    grid-template-columns: 1fr 6fr 3fr 0.5fr;
     grid-template-rows: 50% 50%;
     grid-template-areas: 
-    "author-picture author-name author-socials bookmark more-settings"
-    "author-picture meta-data . . .";
+    "author-picture author-name author-socials bookmark"
+    "author-picture meta-data . .";
 }
 .article__picture-container {
     grid-area: author-picture;
 
-    place-items: center;
+    place-items: start;
 }
 .article__img {
     border-radius: 100vw; 
@@ -456,12 +511,26 @@ article {
     grid-area: author-name;
 
     align-self: end;
+    align-items: center;
+    gap: 1em;
 }
-
 .article__author-username {
     margin: 0em;
-
+    width: fit-content;
     line-height: 1;
+}
+
+.article__author-username-container button {
+    padding: 0.2em 0.5em;
+    border-radius: 100vw;
+
+    display: none;
+
+    font-size: var(--fs-150);
+
+    color: hsl(var(--clr-neutral-100));
+    background-color: hsl(var(--clr-accent-900));
+    
 }
 
 .article__links-container {
@@ -472,6 +541,7 @@ article {
 }
 .article__links-container ul {
     --flex-gap: 0.6em;
+
     width: 100%;
     margin: 0em;
     
@@ -482,17 +552,27 @@ article {
 }
 .article__links-container a {
     text-decoration: none;
+    cursor:pointer;
 }
+
+.article__links-container a:is(:hover, :focus) > i {
+    color: hsl(var(--clr-neutral-400));
+} 
 .article__links-container i,
-:is(.article__bookmark, .article__settings) button{
+:is(.article__bookmark) button{
+    align-self: end;
+    
     font-size: var(--fs-200);
 
     color: hsl(var(--clr-neutral-400)/50%);
-    align-self: end;
+    
+    cursor: pointer;
 }
 
 :is(.article__bookmark, .article__settings) button:is(:hover, :focus) > i {
     color: hsl(var(--clr-neutral-900));
+
+    cursor:pointer;
 }
 
 article > footer button {
@@ -505,15 +585,20 @@ article > footer button {
     align-items: end;
 }
 
+.article__bookmark button{
+    border: none;
+
+    color: hsl(var(--clr-neutral-400));
+}
+.article__bookmark button > span {
+    display: none;
+}
 :is(.article__bookmark, .article__settings) button i {
     color: hsl(var(--clr-neutral-400));
 }
-.article__settings {
-    grid-area: more-settings;
-
-}
 .article__meta-data {
     --flex-gap: 0.5em;
+
     grid-area: meta-data;
     flex-direction: row;
     align-items: start;
@@ -522,13 +607,17 @@ article > footer button {
     width: fit-content;
 }
 footer time, 
-.article__meta-data > div > time+span,
+.article__meta-data > div > span > time+span,
 .footer__floating-period{
-    color: hsl(var(--clr-neutral-400));
-
     font-size: var(--fs-150);
+
+    color: hsl(var(--clr-neutral-400));
 }
-article > footer:not(img) {
+
+.article__links-container button:is(:hover, :focus) > i {
+    color: hsl(var(--clr-neutral-400));
+}
+article > div > footer:not(img) {
     font-size: var(--fs-200);
     line-height: 1em;
     font-family: Arial, Helvetica, sans-serif;
@@ -565,28 +654,147 @@ article > footer:not(img) {
     color: hsl(var(--clr-neutral-100));
     background-color: hsl(var(--clr-accent-900));
 }    
+.article__settings {
+    grid-template-rows: 1fr 1fr;
+}
+.article__settings button {
+    align-self: center;
+}
+
+.article__body {
+    font-family: var(--ff-base);
+}
+
+.article__body h1, 
+.article__body h2, 
+.article__body h3, 
+.tooltip {
+    font-family: var(--ff-accent);
+}
+
+.article__body h1 {
+    cursor: pointer;
+}
 
 
-
-footer:not(article > footer) {
+footer:not(article > div > footer) {
     width: 100%; 
     padding-block: 0.5em;
     border-top: 1px solid hsl(var(--clr-neutral-200)/50%);
+
     place-content: center;
 }
 
+.article__interactions {
+    border-radius: 100vw;
+    padding: 0.5em 1em;
+    
+    position: fixed; 
+    inset: auto auto 1.5em 50%;
+    transform: translateX(-50%);
+    
+    font-size: var(--fs-200);
+
+    background-color: hsl(var(--clr-neutral-100));
+    box-shadow: 0 3px 18px hsl(var(--clr-neutral-400)/30%);
+}
+
+.article__interactions-container {
+    --flex-gap: 1em;
+    align-items: center;
+    height: 100%; 
+
+}
+.article__interactions button {
+    border: none;
+
+    color: hsl(var(--clr-neutral-400) / 50%);
+    background: transparent;
+}
+
+.article__interactions button:is(:hover, :focus){
+    color: hsl(var(--clr-neutral-400));
+    cursor: pointer;
+}
+
+.article__interactions .line {
+    width: 1.5px;
+    height: 20px;
+    display: inline-block;
+
+    
+    background-color: hsl(var(--clr-neutral-200)/50%);
+}
+
+/*Media Queries
+------------------------------------------------*/
 /*For portrait and landscape*/
-@media screen and (max-width: 1050px){
-    body {
-        font-size: var(--fs-300);
-    }
+@media screen and (max-width: 1050px) {
     nav {
         display: none;
     }
     article {
         margin-inline: auto;
     }
+    .article__footer {
+        grid-template-columns: 60px 30px 12fr;
+        grid-template-rows: 25% 25% 1fr;
+        grid-template-areas: 
+        "author-picture author-name author-name"
+        "author-picture meta-data meta-data"
+        "bookmark bookmark author-socials";    
+    }
+    .article__author-username-container button {
+        display: inline-block;
+    }
+
+    
+    .article__bookmark button{
+        border: 1px solid hsl(var(--clr-neutral-200));
+        border-radius: 50vw;
+
+        width: fit-content;
+
+        font-size: var(--fs-150);
+
+        gap: 0.5em;
+
+        padding: 0.6em 1em;
+
+        color: hsl(var(--clr-neutral-400));
+    }
+    .article__bookmark button > span {
+        display: inline;
+    }
+    .article__links-container {
+        grid-area: author-socials;
+
+        align-items: center;
+        grid-template-columns: 1fr 5fr 2fr 2fr;
+    }
+
+    .article__links-container ul {
+        --flex-gap: 0.6em;
+
+        width: 100%;
+        flex-direction: row;
+
+        
+        justify-content: start;
+    }
+
 }
 
+@media screen and (min-width:724px) and (max-width: 1050px){
+    body {
+        font-size: var(--fs-300);
+    }
+}
+
+@media screen and (max-width:414px){
+    .article__links-container {
+        padding-left: 1em;
+    }
+}
 /*For portrait only*/
 /*For landscape only*/
