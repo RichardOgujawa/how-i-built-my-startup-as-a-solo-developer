@@ -54,12 +54,12 @@
     /*Typography*/
     /*--font-size--*/
     --fs-100: 0.45rem;
-    --fs-200: 0.7rem;
-    --fs-300: 0.9rem;
-    --fs-400: 1rem;
-    --fs-500: 1.1rem;
-    --fs-600: 1.2rem;
-    --fs-900: 1.4rem; 
+    --fs-200: 0.8rem;
+    --fs-300: 1rem;
+    --fs-400: 1.1rem;
+    --fs-500: 1.2rem;
+    --fs-600: 1.4rem;
+    --fs-900: 1.5rem; 
 
     font-size: 20px;
 
@@ -144,8 +144,27 @@
 
     animation: pop-down forwards 0.1s ease-out;
 }
+@keyframes pop-up {
+    0% {
+        transform: translate(-50%, -115%);
+    }
+
+    100% {
+        transform: translate(-50%, -125%);
+    }
+}
+/* @keyframes pop-down {
+    0% {
+        transform: translate(-50%, -115%);
+    }
+
+    100% {
+        transform: translate(-50%, -125%);
+    }
+} */
 .tooltip {
     padding: 0.5em;
+    box-sizing: border-box;
     border-radius: 0.15em;
 
     display: none;
@@ -184,29 +203,11 @@
     color:hsl(var(--clr-neutral-100) / 50%);
     cursor:text;
 }
-
-@keyframes pop-up {
-    0% {
-        transform: translate(-50%, -105%);
-    }
-
-    100% {
-        transform: translate(-50%, -115%);
-    }
-}
-/* @keyframes pop-down {
-    0% {
-        transform: translate(-50%, -115%);
-    }
-
-    100% {
-        transform: translate(-50%, -125%);
-    }
-} */
 .tooltip-container {
     position: relative;
 }
 
+/*Triangle*/
 .tooltip-container::after {
     content: '';
     width: 1.4em;
@@ -214,11 +215,28 @@
     clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
 
     position: absolute;
+    z-index: 99;
     top: 100%;
     left: 50%;
     transform: translate(-50%, 50%);
 
     background-color: hsl(var(--clr-neutral-900));
+}
+
+/*This is to provide some area below the tooltip so it doesn't disappear when you try and hover on it. I tried doing this with a simply border-bottom on the actual tool-tip but I realised that it wouldn't end up being transparent, and making it white would work for this example, but wouldn't be easily re-usable on other parts of the site.*/
+.tooltip-container::before {
+    content: '';
+    width: calc(100% + 1em); 
+    height: 1em; 
+    
+    position: absolute; 
+    top: 100%; 
+    left: -0.5em;
+    transform: translateY(50%);
+
+    background-color: transparent;
+
+    cursor: auto;
 }
 
 
@@ -264,7 +282,6 @@ small {
     font-size: var(--fs-200);
 }
 
-
 /*Images*/
 img {
     height: auto;
@@ -287,6 +304,7 @@ hr {
 /*Highlights*/
 mark {
     background-color: hsl(var(--clr-accent-500) / 50%);
+    padding-block: 0.1em;
 }
 mark:is(:focus, :hover){
     background-color: hsl(var(--clr-accent-500));
@@ -311,7 +329,7 @@ abbr {
 [data-ul="article-ul"] {
     margin-block: 1.1em;
     margin-left: 1.5em;
-    width: calc(100%-1.5em);
+    width: calc(100% - 1.5em);
 }
 
 
@@ -337,7 +355,6 @@ nav {
   border-right: 1px solid hsl(var(--clr-neutral-200)/50%);
 
   background-color: hsl(var(--clr-neutral-100));
-  
 }
 
 /*--Nav Logo--*/
@@ -414,11 +431,12 @@ article {
     margin-inline: 25vw;
 }
 .article__footer{
+    --gap: 0.3em;
+    row-gap: var(--gap);
     max-width: 700px;
-    height: 12.5vh;
+    height: fit-content;
     margin-top: 7vh;
 
-    outline: 3px solid red;
     grid-template-columns: 1fr 6fr 1.5fr 0.5fr 0.5fr;
     grid-template-rows: 50% 50%;
     grid-template-areas: 
@@ -433,23 +451,46 @@ article {
 .article__img {
     border-radius: 100vw; 
 }
-.article__author-username {
+.article__author-username-container {
     grid-area: author-name;
+
     align-self: end;
 }
+
+.article__author-username {
+    margin: 0em;
+    line-height: 1;
+
+    
+}
+
 .article__links-container {
     grid-area: author-socials;
+
+    outline: 3px solid blue;
+    align-items:end;
+    grid-template-columns: 1fr 5fr 2fr 2fr;
 }
 .article__links-container ul {
     width: 100%;
+    margin: 0em;
     
     flex-direction: row;
     flex-wrap: nowrap;
+
+    align-content: end;
+    
 }
 .article__links-container i {
+    display: inline;
     font-size: 1rem;
 
     color: hsl(var(--clr-neutral-400)/50%);
+    align-self: end;
+}
+.article__links-container button {
+    border: none;
+    background-color: transparent; 
 }
 .article__bookmark {
     grid-area: bookmark;
@@ -462,7 +503,6 @@ article {
     grid-area: meta-data;
     flex-direction: row;
     align-items: start;
-    outline: 3px solid red;
 }
 .article__meta-data > * {
     width: fit-content;
@@ -473,7 +513,8 @@ footer time,
     color: hsl(var(--clr-neutral-400));
 }
 article > footer:not(img) {
-    font-size: var(--fs-300);
+    font-size: var(--fs-200);
+    line-height: 1em;
 }
 .article__meta-data button{
     border: none;
@@ -503,14 +544,18 @@ article > footer:not(img) {
 }    
 
 
-footer {
+footer:not(article > footer) {
     width: 100%; 
     padding-block: 1.5px;
     border-top: 1px solid hsl(var(--clr-neutral-200)/50%);
     place-content: center;
 }
 
+/*For portrait and landscape*/
 @media screen and (max-width: 1050px){
+    body {
+        font-size: var(--fs-300);
+    }
     nav {
         display: none;
     }
@@ -518,3 +563,6 @@ footer {
         margin-inline: auto;
     }
 }
+
+/*For portrait only*/
+/*For landscape only*/

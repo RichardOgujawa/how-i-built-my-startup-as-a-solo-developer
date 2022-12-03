@@ -9,10 +9,20 @@ So, I've decided to stop trying to speedrun through complex projects that will o
 
 For this project, I decided to code three [Medium](https://medium.com/) articles, which I believe, although not enough to solidify the new things I have learned about semantic HTML into my coding brain, it would most definitely be <strong>good practice</strong>, and something that I can update if needs be the more I learn, and also provide me a <strong>template to refer to in future builds</strong>.
 
+## Fixes (or at least what I believe to be fixes)
+I've been using Medium for a long time but never actually thought about the minor issues on the site, whether it be spacing issues, or hover interactions. I'm not saying that I'm anywhere near the level of the people working on the site, but I did make some minor tweaks that I think although noticeable to the majority of viewers unless you analyse the design of the website, still were tweaks that would improve the design as a whole.
+
+![Tooltip Screenshot](images/tooltip-ss.png) <!--Edit this on Photoshop and show a side-by-side comparison of yours and theirs-->
+- There were some minor spacing issues between the tooltip icons, so I used the flexbox layout and gap to solve this. 
+
+
+
 ## Some things I Learned in the course of doing this 👨🏾‍💻
 - OG Tags - which are tags used to control the display of a URL when shared on social media. [Learn more about OG Tags here](https://ahrefs.com/blog/open-graph-meta-tags/)
 - If you are writing a period of time, for example 5 minutes, you would need to prefix the datetime value with PT which stands for Period (P) and Time (T). This specifies that the period only consists of time and not a date. [More on how to use the time tag to represent durations in this article](https://stackoverflow.com/questions/51168022/what-does-pt-prefix-stand-for-in-duration)
+- You have to have a good memory to be a good coder. If you forget that you had a margin on all your ul elements for example, you may get frustrated when you find that you can't align the a specific ul to the end of the it's container. 
 
 ## Some questions I had based on the project
 - I was unable to load multiple fonts in my CSS. I got the fonts from the Medium website by using [this method](https://www.makeuseof.com/how-to-find-webpages-font-inspect-element-tool-browser-extensions/#:~:text=Go%20to%20the%20webpage.,fonts%20used%20on%20the%20webpage.), but was unable to load the Sohne font for the heading text properly for some reason. Any ideas?
+
 
