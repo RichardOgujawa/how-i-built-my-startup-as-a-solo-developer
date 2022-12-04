@@ -103,6 +103,9 @@
 /*Pointer Events*/
 .invisible {
     pointer-events: none;
+    /* visibility: hidden; */
+    display: block;
+    background-color: red;
 }
 
 /*--TYPOGRAPHY--*/
@@ -125,6 +128,7 @@
 
 /*--BUTTONS-*/
 .btn {
+    padding: 0.75em 1.5em;
     border: none;
     border-radius: 100vw;
 
@@ -171,14 +175,6 @@ span {
     border-radius: 50%;
     border: 2px solid transparent;
     transition: var(--transition-slow);
-}
-
-.your-profile-img:is(:hover, :focus) {
-    border: 2px solid hsl(var(--clr-accent-900));
-}
-
-.other-user-profile-img:is(:hover, :focus) {
-    border: 2px solid hsl(var(--clr-neutral-400)/50%);
 }
 
 /*--Tooltip--*/
@@ -274,11 +270,7 @@ span {
 }
 
 .tooltip {
-    font-size: 0.8em;
-
-    cursor: text;
-
-    color: hsl(var(--clr-neutral-100) / 50%);
+    cursor: default;
 }
 
 /*--ADDITONAL SHAPES FOR TOOLTIP*/
@@ -780,7 +772,6 @@ header>header>div:not(img) {
 
 .header__meta-data button span:first-child {
     padding: 6px;
-    /* aspect-ratio: 1/1; */
     border-radius: 50%;
 
     display: grid;
@@ -840,6 +831,8 @@ header>header>div:not(img) {
 
 article footer {
     border-top: 1px solid hsl(var(--clr-neutral-200)/50%);
+
+    text-align: center;
 }
 
 article small {
@@ -852,16 +845,17 @@ article small {
     width: 100%;
 
     grid-template-columns: 8.5rem auto 25rem;
-
+    grid-template-areas: ". interaction .";
     position: fixed;
     bottom: 2rem;
     left: 0%;
 }
 
 .article__interactions {
+    grid-area: interaction;
     width: fit-content;
     border-radius: 100vw;
-    padding: 0.5em 1.25em;
+    padding: 0.75em 1.5em;
 
     justify-self: center;
 
@@ -945,7 +939,6 @@ article small {
 }
 
 .right-panel>div:first-child button {
-    padding: 0.5em 0.75em;
     border: none;
 
     font-size: var(--fs-150);
@@ -1016,6 +1009,7 @@ label>i {
 /*Buttons*/
 .right-panel__button-section {
     gap: 1em;
+    align-items: center;
 }
 
 .right-panel__author-info>div:last-child>button {
@@ -1023,9 +1017,9 @@ label>i {
     padding: 1em;
 }
 
-.right-panel__author-info>div:last-child>button:last-child {
-    aspect-ratio: 1/1;
-    display: inline-block;
+.right-panel__button-section>button:last-child {
+    aspect-ratio: 1;
+    padding: 0.75em 1em;
 }
 
 .right-panel__author-info>div:last-child>button:is(:hover, :focus) {
@@ -1202,7 +1196,6 @@ small {
     .mobile-topbar-nav button {
         border: none;
         border-radius: 100vw;
-        padding: 0.5em 0.75em;
 
         font-size: var(--fs-150);
 
