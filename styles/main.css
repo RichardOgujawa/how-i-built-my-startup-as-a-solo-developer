@@ -100,14 +100,6 @@
     position: absolute;
 }
 
-/*Pointer Events*/
-.invisible {
-    pointer-events: none;
-    /* visibility: hidden; */
-    display: block;
-    background-color: red;
-}
-
 /*--TYPOGRAPHY--*/
 .italics {
     font-style: italic;
@@ -844,6 +836,7 @@ article small {
 .article__interactions-layout {
     width: 100%;
 
+    pointer-events: none;
     grid-template-columns: 8.5rem auto 25rem;
     grid-template-areas: ". interaction .";
     position: fixed;
@@ -852,11 +845,11 @@ article small {
 }
 
 .article__interactions {
-    grid-area: interaction;
     width: fit-content;
     border-radius: 100vw;
     padding: 0.75em 1.5em;
-
+    
+    grid-area: interaction;
     justify-self: center;
 
     font-size: var(--fs-200);
@@ -864,6 +857,8 @@ article small {
     background-color: hsl(var(--clr-neutral-100));
 
     box-shadow: 0 3px 18px hsl(var(--clr-neutral-400)/30%);
+
+    pointer-events: all;
 }
 
 .article__interactions-container {
