@@ -1,6 +1,7 @@
 # Coding A Medium Article
 
 The article I'm working on today is [How I built my Startup as a solo developer by Sushrit Pasupuleti](https://medium.com/@sushrit.pk21/how-i-built-my-startup-as-a-solo-developer-8561bf7eebde)
+You can find the [full live version here](https://coding-this-medium-article-ep1.netlify.app/).
 
 ## Why Am I Doing This? 🤷🏾‍♂️
 During the course of taking a deeper dive into HTML, primarily through taking courses by [Jen Kramer](https://www.linkedin.com/in/jen4web/) on [LinkedIn Learning](https://bit.ly/3VkpvwB) I realised that a lot of the HTML I had been writing before was simply just <strong>a coat hanger for my CSS</strong>. It was there simply to provide the content for my CSS to be able to style. I didn't really give much thought to things like <strong>accessibility, structure, semantics</strong>, choosing to care more about just having a live version of my build that <em>looked</em> right. 
