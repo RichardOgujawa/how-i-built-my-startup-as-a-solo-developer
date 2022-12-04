@@ -372,10 +372,14 @@ span {
 }
 
 :where(h1,
-    h2,
-    p,
-    ul) {
-        line-height: 1.5;
+    h2) {
+    line-height: 1.5;
+}
+
+:where(
+    p, 
+    ul)
+{
     margin-block: 0.5em;
 }
 
@@ -392,7 +396,7 @@ span {
 }
 
 :where(h2) {
-    margin-top: 3em;
+    margin-top: 2em;
     font-size: var(--fs-500);
 }
 
@@ -438,7 +442,7 @@ span {
 
 /*--CUSTOM ATTRIBUTES--*/
 /*Elements only on articles*/
-:where([data-article="pic"]) {
+:where([data-article="img"]) {
     margin-block: 2.5em;
 }
 

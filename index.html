@@ -311,18 +311,18 @@
                 </p>
 
                 <picture>
-                    <img data-article="article-pic" src="https://miro.medium.com/max/1400/1*kb6yGdF2Biq6IgaE-RG7eA.png"
+                    <img data-article="img" src="https://miro.medium.com/max/1400/1*kb6yGdF2Biq6IgaE-RG7eA.png"
                         alt="An ad for skillShack, a company whre you can learn how to code by building projects."
                         width="700" height="394">
                 </picture>
 
                 <picture>
-                    <img data-pic="article-pic" src="https://miro.medium.com/max/1400/1*d8GAGqzp7k4E6Y3GfyO6Mg.png"
+                    <img data-article="img" src="https://miro.medium.com/max/1400/1*d8GAGqzp7k4E6Y3GfyO6Mg.png"
                         alt="Another ad for skillShack, which talks about how you can get your project in front of many eyes and get feedback."
                         width="700" height="394">
                 </picture>
                 <picture>
-                    <img data-pic="article-pic" src="https://miro.medium.com/max/1400/1*cNimmn5bhFfx9u5n33GPvQ.png"
+                    <img data-article="img" src="https://miro.medium.com/max/1400/1*cNimmn5bhFfx9u5n33GPvQ.png"
                         alt="Another ad for skillShack, which talks about how you can grow your network using their platform."
                         width="700" height="394">
                 </picture>
@@ -388,7 +388,7 @@
                 <!--Shift in topic-->
                 <h2>The Stack</h2>
 
-                <ul data-ul="article-ul">
+                <ul data-article="ul">
                     <li>Frontend: <a href="https://nextjs.org/" target="_blank">Next.<abbr
                                 title="javascript">js</abbr></a></li>
                     <li>Backend: <a href="https://expressjs.com/" target="_blank">Express.<abbr
@@ -421,51 +421,43 @@
                     Regeneration). I’ll summarize each in simple terms below:
                 </p>
 
-                <dl>
-                    <div>
-                        <dt>
-                            <abbr title="Server Side Rendering">SSR</abbr>
-                        </dt>
-                        <dd>
-                            Essentially serves documents with all the components rendered and populated with necessary
-                            data
-                            (from
-                            <abbr title="Application Program Interface">APIs</abbr>). This way a bot can see all the
-                            info
-                            without the need for JavaScript execution. This makes
-                            serving
-                            pages with no real-time updates like Blogs, Profile data etc simple and allows for good
-                            <abbr title="Search Engine Optimizatio">SEO</abbr>.
-                        </dd>
-                    </div>
+                <ul data-article="ul">
+                
+                    <li>
+                
+                        <abbr title="Server Side Rendering">SSR:</abbr>
+                        Essentially serves documents with all the components rendered and populated with necessary
+                        data
+                        (from
+                        <abbr title="Application Program Interface">APIs</abbr>). This way a bot can see all the
+                        info
+                        without the need for JavaScript execution. This makes
+                        serving
+                        pages with no real-time updates like Blogs, Profile data etc simple and allows for good
+                        <abbr title="Search Engine Optimizatio">SEO</abbr>.
+                
+                    </li>
+                
+                    <li>
+                        <abbr title="Static Site Generation">SSG:</abbr>
+                        It serves purely static pages (No <abbr title="Application Program Interface">APIs</abbr> data), and offers good
+                        <abbr title="Search Engine Optimization">SEO</abbr> at the same time. Useful
+                        for
+                        things like documentation.
+                
+                    </li>
+                
+                    <li>
+                        <abbr title="Incremental Static Regeneration">ISR:</abbr>
+                        It’s like <abbr title="Server Side Rendering">SSR</abbr> but it periodically refreshes the
+                        static Pages with new <abbr title="Application Program Interface">APIs</abbr> data. Useful
+                        for
+                        things like blogs and profiles where updates may not be frequent but do happen and must be
+                        reflected.
+                        Bonus: Next.<abbr title="javascript">js</abbr> and Vercel have the perfect ecosystem.
+                    </li>
+                </ul>
 
-                    <div>
-                        <dt>
-                            <abbr title="Static Site Generation">SSG</abbr>
-                        </dt>
-                        <dd>
-                            It serves purely static pages (No <abbr title="Application Program Interface">APIs</abbr>
-                            data),
-                            and offers good <abbr title="Search Engine Optimization">SEO</abbr> at the same time. Useful
-                            for
-                            things like documentation.
-                        </dd>
-                    </div>
-
-                    <div>
-                        <dt>
-                            <abbr title="Incremental Static Regeneration">ISR</abbr>
-                        </dt>
-                        <dd>
-                            It’s like <abbr title="Server Side Rendering">SSR</abbr> but it periodically refreshes the
-                            static Pages with new <abbr title="Application Program Interface">APIs</abbr> data. Useful
-                            for
-                            things like blogs and profiles where updates may not be frequent but do happen and must be
-                            reflected.
-                            Bonus: Next.<abbr title="javascript">js</abbr> and Vercel have the perfect ecosystem.
-                        </dd>
-                    </div>
-                </dl>
 
                 <p>Bonus: Next.js and Vercel have the perfect ecosystem.</p>
 
@@ -566,7 +558,7 @@
                 <h2>Deployment</h2>
 
                 <p>So my deployment workflow goes as follows</p>
-                <ul data-ul="article-ul">
+                <ul data-article="ul">
                     <li>Merge a Pull Request to main which triggers GitHub Actions.</li>
                     <li>Build Preview Deployments for the admin and main website on Vercel.</li>
                     <li>Once the Preview build is built successfully, promote it to production. (I get notifications for
