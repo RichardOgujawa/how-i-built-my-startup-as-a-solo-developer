@@ -272,7 +272,7 @@ span {
     background-color: hsl(var(--clr-neutral-200)/50%);
 }
 
-.tooltip span {
+.tooltip {
     font-size: 0.8em;
 
     cursor: text;
@@ -359,7 +359,6 @@ span {
     color: hsl(var(--clr-neutral-900));
 }
 
-
 /*Typography*/
 :where(p,
     dl,
@@ -375,6 +374,7 @@ span {
     h2,
     p,
     ul) {
+        line-height: 1.5;
     margin-block: 0.5em;
 }
 
@@ -593,6 +593,7 @@ article {
 
 /*Header*/
 header {
+    min-width: 200px;
     margin-top: 7vh;
 }
 
@@ -632,7 +633,7 @@ header button {
 .header__author-username-container {
     grid-area: author-name;
 
-    align-self: end;
+    align-self: start;
     align-items: center;
     gap: 1em;
 }
@@ -647,7 +648,7 @@ header button {
 .header__links-container {
     grid-area: author-socials;
 
-    align-items: end;
+    align-items: start;
 }
 
 .header__links-container ul {
@@ -658,19 +659,19 @@ header button {
 
     flex-direction: row;
     flex-wrap: nowrap;
-    align-items: end;
+    align-items: start;
     justify-content: center;
 }
 
 .header__links-container li>a {
     display: flex;
-    align-items: end;
+    align-items: start;
 }
 
 .header__links-container li>button {
     display: flex;
 
-    align-items: end;
+    align-items: start;
 }
 
 .header__links-container a {
@@ -685,7 +686,7 @@ header button {
 
 .header__links-container i,
 :is(.header__bookmark) button {
-    align-self: end;
+    align-self: start;
     justify-self: center;
 
     font-size: var(--fs-200);
@@ -704,7 +705,7 @@ header button {
 .header__bookmark {
     grid-area: bookmark;
 
-    align-items: end;
+    align-items: start;
 }
 
 .header__bookmark button {
@@ -723,20 +724,26 @@ header button {
 
     grid-area: meta-data;
     flex-direction: row;
-    align-items: center;
+    align-items: start;
 }
 
 .header__meta-data>* {
     width: fit-content;
 }
 
+.header__meta-data > div:nth-child(2) {
+    --flex-gap: 0.2em;
+}
+
 header time,
-.header__meta-data>div>span>time+span,
+.header__meta-data>div>time+span,
 .header__floating-period {
     font-size: var(--fs-150);
 
     color: hsl(var(--clr-neutral-400));
 }
+
+
 
 .header__links-container button:is(:hover, :focus)>i {
     color: hsl(var(--clr-neutral-400));
@@ -745,7 +752,7 @@ header time,
 header>header>div:not(img) {
     font-size: var(--fs-200);
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5;
+    line-height: 1;
 }
 
 .header__meta-data button {
@@ -795,7 +802,6 @@ header>header>div:not(img) {
 
 .header__settings {
     align-items: start;
-    justify-content: start;
 }
 
 .header__settings button {
@@ -808,7 +814,6 @@ header>header>div:not(img) {
 .article__body {
     font-family: var(--ff-base);
 }
-
 .article__body h1,
 .article__body h2,
 .article__body h3,
@@ -1240,7 +1245,7 @@ small {
         grid-template-columns: 60px 30px 12fr;
         row-gap: 0.5em;
         column-gap: 0.2em;
-        grid-template-rows: 25% 25% 1fr;
+        grid-template-rows: 25% 32% 1fr;
         grid-template-areas:
             "author-picture author-name author-name"
             "author-picture meta-data meta-data"
