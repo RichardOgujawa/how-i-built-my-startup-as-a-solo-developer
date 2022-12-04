@@ -489,6 +489,12 @@ body {
     display: none;
 }
 
+/*--ARTICLE--*/
+/*Footer*/
+article footer {
+    display: none;
+}
+
 /*------------------------------------------------*/
 
 /*--DESKTOP NAV--*/
@@ -1147,6 +1153,11 @@ small {
         font-size: var(--fs-150);
     }
 
+    /*--ARTICLE--*/
+    /*Footer*/
+    article footer {
+        display: block;
+    }
     /*------------------------------------------------*/
 
     body {
