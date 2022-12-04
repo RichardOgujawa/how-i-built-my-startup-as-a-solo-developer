@@ -42,6 +42,7 @@
     --fs-125: 0.6rem;
     --fs-150: 0.7rem;
     --fs-200: 0.8rem;
+    --fs-250: 0.95rem;
     --fs-300: 1rem;
     --fs-400: 1.1rem;
     --fs-500: 1.2rem;
@@ -686,7 +687,7 @@ header button {
 
 .header__links-container i,
 :is(.header__bookmark) button {
-    align-self: start;
+    align-self: center;
     justify-self: center;
 
     font-size: var(--fs-200);
@@ -769,7 +770,7 @@ header>header>div:not(img) {
 
 .header__meta-data button span:first-child {
     padding: 6px;
-    aspect-ratio: 1/1;
+    /* aspect-ratio: 1/1; */
     border-radius: 50%;
 
     display: grid;
@@ -802,6 +803,8 @@ header>header>div:not(img) {
 
 .header__settings {
     align-items: start;
+    justify-content: center;
+    flex-basis: 40px;
 }
 
 .header__settings button {
@@ -1111,7 +1114,7 @@ small {
 
 }
 
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 1115px) {
 
     /*--SWITCHES---------------------------------------*/
     /*--DESKTOP NAV--*/
@@ -1145,6 +1148,10 @@ small {
     }
 
     /*------------------------------------------------*/
+
+    body {
+        font-size: var(--fs-250);
+    }
 
     main {
         grid-template-columns: 1fr;
@@ -1238,7 +1245,6 @@ small {
         margin-top: 10vh;
 
         align-items: start;
-        flex-basis: 1fr 30px;
     }
 
     .header__container {
@@ -1315,10 +1321,7 @@ small {
     }
 }
 
-@media screen and (min-width:724px) and (max-width: 1050px) {
-    body {
-        font-size: var(--fs-300);
-    }
+@media screen and (max-width: 1090px) {
 }
 
 @media screen and (max-width:724px) {
@@ -1348,8 +1351,16 @@ small {
 
 }
 
+@media screen and (max-width:421px) {
+    .header__settings button{
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 @media screen and (max-width:414px) {
     .article__links-container {
         padding-left: 1em;
     }
 }
+
