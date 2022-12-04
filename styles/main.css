@@ -813,7 +813,8 @@ header>header>div:not(img) {
 .article__body h1,
 .article__body h2,
 .article__body h3,
-.tooltip {
+.tooltip, 
+article footer {
     font-family: var(--ff-accent);
 }
 
