@@ -1079,6 +1079,8 @@ small {
     /*--ARTICLE INTERACTIONS--*/
     .article__interactions-layout {
         grid-template-columns: 3.75rem auto 25rem;
+        grid-template-areas: ". interaction .";
+
     }
 }
 
@@ -1103,6 +1105,7 @@ small {
     /*--ARTICLE INTERACTIONS--*/
     .article__interactions-layout {
         grid-template-columns: 3.75rem auto 19rem;
+        grid-template-areas: ". interaction .";
     }
 
     .header__links-container {
@@ -1318,9 +1321,9 @@ small {
 
     /*--ARTICLE__INTERACTIONS-LAYOUT*/
     .article__interactions-layout {
-        grid-template-columns: 1fr;
         bottom: 5rem;
-
+        grid-template-columns: 1fr;
+        grid-template-areas: "interaction";
     }
 }
 
