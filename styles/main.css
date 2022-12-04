@@ -477,7 +477,6 @@ body {
     display: none;
 }
 
-
 /*--HEADER--*/
 /*Save text beside bookmmark icon on button*/
 .header__bookmark button>span {
@@ -617,7 +616,7 @@ header button {
     gap: var(--grid-gap);
     column-gap: 0em;
     flex-basis: 100%;
-    grid-template-columns: 1fr 6fr 3fr 0.5fr;
+    grid-template-columns: 60px 6fr 3fr 0.5fr;
     grid-template-rows: 50% 50%;
     grid-template-areas:
         "author-picture author-name author-socials bookmark"
@@ -803,7 +802,9 @@ header>header>div:not(img) {
     align-items: start;
 }
 
-/*Main Content of Article*/
+/*Main Content of Article
+------------------------------------------------*/
+
 .article__body {
     font-family: var(--ff-base);
 }
@@ -819,7 +820,16 @@ header>header>div:not(img) {
     cursor: pointer;
 }
 
-/*Article Interactions*/
+article footer {
+    border-top: 1px solid hsl(var(--clr-neutral-200)/50%);
+}
+
+article small {
+    border-top: 0;
+}
+
+/*Article Interactions
+------------------------------------------------*/
 .article__interactions-layout {
     width: 100%;
 
@@ -1087,6 +1097,13 @@ small {
     .article__interactions-layout {
         grid-template-columns: 3.75rem auto 19rem;
     }
+
+    .header__links-container {
+        grid-area: author-socials;
+    
+        align-items: center;
+    }
+
 }
 
 @media screen and (max-width: 1090px) {
@@ -1105,6 +1122,21 @@ small {
     /*--ARTICLE INTERACTIONS--*/
     .invisible {
         display: none;
+    }
+
+    /*--HEADER--*/
+    /*Save text beside bookmmark icon on button*/
+    .header__bookmark button>span {
+        display: inline;
+    }
+
+    /*Follow button*/
+    .header__author-username-container button {
+        padding: 0.25em 0.5em;
+        
+        display: inline-block;
+        
+        font-size: var(--fs-150);
     }
 
     /*------------------------------------------------*/
@@ -1203,10 +1235,10 @@ small {
         align-items: start;
     }
 
-    .article-header__container {
+    .header__container {
         height: 100%;
         grid-template-columns: 60px 30px 12fr;
-        row-gap: 1em;
+        row-gap: 0.5em;
         column-gap: 0.2em;
         grid-template-rows: 25% 25% 1fr;
         grid-template-areas:
@@ -1215,7 +1247,17 @@ small {
             "bookmark bookmark author-socials";
     }
 
-    .article__author-username-container button {
+    .header__bookmark button{
+        border: 1px solid hsl(var(--clr-neutral-400)/70%);
+        border-radius: 100vw;
+        padding: 0.25em 0.5em;
+
+        gap: 0.5em;
+    
+        align-items: center;
+    }
+
+    .header__author-username-container button {
         padding: 0.2em 0.5em;
         border-radius: 100vw;
 
@@ -1224,7 +1266,7 @@ small {
         font-size: var(--fs-150);
     }
 
-    .article__bookmark button {
+    .header__bookmark button {
         width: fit-content;
         border: 1px solid hsl(var(--clr-neutral-200));
         padding: 0.6em 1em;
@@ -1238,18 +1280,18 @@ small {
         color: hsl(var(--clr-neutral-400));
     }
 
-    .article__bookmark button>span {
+    .header__bookmark button>span {
         display: inline;
     }
 
-    .article__links-container {
+    .header__links-container {
         grid-area: author-socials;
 
         align-items: center;
-        grid-template-columns: 1fr 5fr 2fr 2fr;
+        /* grid-template-columns: 1fr 5fr 2fr 2fr; */
     }
 
-    .article__links-container ul {
+    .header__links-container ul {
         --flex-gap: 0.6em;
 
         width: 100%;
