@@ -7,17 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--How the page will save-->
+    <!--Title-->
+    <title>Coding this Medium Article Ep.1 | "How I built my Startup as a solo developer"</title>
+
+    <!--How the page will save to Home Screen & Bookmarks-->
     <meta name="ms-application-name" content="Medium | How I built my Startup as a solo developer">
     <meta name="msapplication-TileImage" content="https://miro.medium.com/1*m-R_BkNf1Qjr1YbyOIJY2w.png">
 
     <!--Describing content-->
     <meta name="author" content="Richard Ogujawa">
+    <meta name="description"
+        content="This article will detail my journey from a Full Stack Engineer to Startup founder over the course of 10 months. Throughout this article I’ll explain the rationale behind choosing each part of my stack and how it played out in the end.">
+    <meta name="keywords" content="website, coding, development, startup, business">
+    <meta rel="canonical" href="https://coding-this-medium-article-ep1.netlify.app/">
 
-    <!--Title-->
-    <title>Coding this Medium Article Ep.1 | "How I built my Startup as a solo developer"</title>
-
-    <!--OG Tags-->
+    <!--Open Graph Tags-->
     <meta property="og-title" content='Coding this Medium Article Ep.1 | "How I built my Startup as a solo developer"'>
     <meta property="og-image"
         content="http://www.appocalypse.co/wp-content/uploads/2019/04/Avengers-Endgame-End-Credits-Scene-Iron-Man-Banging-Sound.jpg">
@@ -27,30 +31,34 @@
     <meta property="og-type" content="article">
     <meta property="og-locale" content="en-GB">
 
-    <!--Misc-->
+    <!--Customizations-->
     <meta name="theme-color" content="#232323">
 
 
-    <!--LINKS-->
-
+    <!--LINKS
+    ------------------------------------------------->
     <!--Favicon-->
     <link rel="shortcut icon" href="https://miro.medium.com/1*m-R_BkNf1Qjr1YbyOIJY2w.png" type="image/x-icon">
+
     <!--Stylesheet-->
     <link rel="stylesheet" href="styles/main.css">
 
-    <!--SCRIPTS-->
+
+    <!--SCRIPTS
+    ------------------------------------------------->
     <!--Font Awesome CDN-->
     <script src="https://kit.fontawesome.com/d908522f87.js" crossorigin="anonymous"></script>
-
-
 </head>
 
 <body>
 
-    <nav class="desktop-nav" role="main menu">
+    <!--DESKTOP NAVIGATION-->
+    <nav class="desktop-nav" role="navigation">
+
         <div class="desktop-nav__container flex-group">
-            <a href="index.html" aria-label="Medium logo">
-            
+
+            <!--DN Medium Logo-->
+            <a href="index.html" aria-label="Medium website logo.">
                 <svg viewBox="0 0 1043.63 592.71" class="dc bk">
                     <g data-name="Layer 2">
                         <g data-name="Layer 1">
@@ -61,31 +69,46 @@
                     </g>
                 </svg>
             </a>
+
+            <!--DN Links-->
             <div class="desktop-nav__links-container grid-group">
                 <ul class="desktop-nav__links flex-group">
-                    <li class="tooltip-parent">
+
+                    <!--DN Home Link Container-->
+                    <li class="desktop-nav__link tooltip-parent">
+
+                        <!--DN Home Link-->
                         <div>
-                            <a href="#" aria-label="Home">
+                            <a hreff="#" aria-label="Home">
                                 <i class="fa fa-house"></i>
                             </a>
                         </div>
+
                         <div class="tooltip anim-right">
                             <div class="tooltip-container">Home</div>
                         </div>
+
                     </li>
-                    <li class="tooltip-parent">
+
+                    <li class="desktop-nav__link tooltip-parent">
+
+                        <!--DN Notification Link-->
                         <div>
-                            <a href="#" aria-label="Check your notifications.">
+                            <a class="menu-item" href="#" aria-label="Check your notifications.">
                                 <i class="fa fa-bell"></i>
                             </a>
                         </div>
+
                         <div class="tooltip anim-right">
                             <div class="tooltip-container">Notifications</div>
                         </div>
                     </li>
-                    <li class="tooltip-parent">
+
+                    <li class="desktop-nav__link tooltip-parent">
+
+                        <!--DN List Link-->
                         <div>
-                            <a href="#" aria-label="See stories you've bookmarked.">
+                            <a class="menu-item" href="#" aria-label="See stories you've bookmarked.">
                                 <i class="fa fa-bookmark"></i>
                             </a>
                         </div>
@@ -93,9 +116,12 @@
                             <div class="tooltip-container">Lists</div>
                         </div>
                     </li>
-                    <li class="tooltip-parent">
+
+                    <li class="desktop-nav__link tooltip-parent">
+
+                        <!--DN Stories Link-->
                         <div>
-                            <a href="#" aria-label="See the stories you've written.">
+                            <a class="menu-item" href="#" aria-label="See the stories you've written.">
                                 <i class="fa fa-file"></i>
                             </a>
                         </div>
@@ -103,10 +129,14 @@
                             <div class="tooltip-container">Stories</div>
                         </div>
                     </li>
+
                     <li><span></span></li>
-                    <li class="tooltip-parent">
+
+                    <li class="desktop-nav__link tooltip-parent">
+
+                        <!--DN Write a Post Link-->
                         <div>
-                            <a href="#" aria-label="Write a post">
+                            <a class="menu-item" href="#" aria-label="Write a post">
                                 <i class="fa fa-pen-to-square"></i>
                             </a>
                         </div>
@@ -114,53 +144,54 @@
                             <div class="tooltip-container">Write</div>
                         </div>
                     </li>
+
                 </ul>
+
             </div>
+
+            <!--DN Your Profile Image-->
             <a href="#" aria-label="Check your profile.">
                 <picture class="desktop-nav__picture--profile">
-                    <img class="desktop-nav__profile-img" src="https://miro.medium.com/fit/c/176/176/1*JNg7pW2VynQHE7hO0U-8cA.jpeg"
+                    <img class="desktop-nav__profile-img your-profile-img"
+                        src="https://miro.medium.com/fit/c/176/176/1*JNg7pW2VynQHE7hO0U-8cA.jpeg"
                         alt="Your profile picture." width="40" height="40">
                 </picture>
             </a>
+
         </div>
+
     </nav>
 
-    <nav class="mobile-nav flex-group">
-        <ul class="grid-group">
-            <li><a href="#" aria-label="Home"><i class="fa fa-home"></i></a></li>
-            <li><a href="#"><i aria-label="Search" class="fa fa-search"></i></a></li>
-            <li><a href="#"><i aria-label="Your stories" class="fa fa-bookmark"></i></a></li>
-            <li><a href="#"><picture>
-                <img class="mobile-nav__profile-img" src="https://miro.medium.com/fit/c/176/176/1*JNg7pW2VynQHE7hO0U-8cA.jpeg"
-                    alt="Your profile picture." width="40" height="40"></a>
-            </picture></li>
-        </ul>
-    </nav>
-
+    <!--MAIN CONTENT-->
     <main class="grid-group">
-        <!--Article-->
         <div></div>
-        <article>
 
-            <div class="article__footer-container flex-group">
-                <footer class="article__footer grid-group">
-                    <!--Profile picture-->
-                    <div class="article__picture-container grid-group">
+        <!--ARTICLE-->
+        <article>
+            <!--HEADER-->
+            <header class="flex-group">
+
+                <div class="header__container grid-group">
+
+                    <!--Header Profile picture-->
+                    <div class="header__picture-container grid-group">
                         <a href="#">
-                            <picture data-user="profile-picture" class="article__picture">
-                                <img class="article__img"
+                            <picture class="header__profile-pic" data-user="profile-picture">
+                                <img class="header__profile-img other-user-profile-img"
                                     src="https://miro.medium.com/fit/c/96/96/1*4cojMNj2q8Zszp9mdvGeag.jpeg"
                                     alt="Profile picture of Sushrit Pasupuleti" width="48" height="48">
                             </picture>
                         </a>
                     </div>
+
                     <!--Username-->
-                    <div data-user="username" class="article__author-username-container flex-group">
-                        <p class="article__author-username">Sushrit Pasupuleti</p>
-                        <button type="button">Follow</button>
+                    <div data-user="username" class="header__author-username-container flex-group">
+                        <p class="header__author-username">Sushrit Pasupuleti</p>
+                        <button class="btn green" type="button">Follow</button>
                     </div>
+
                     <!--Social Media Links-->
-                    <div class="article__links-container flex-group">
+                    <div class="header__links-container flex-group">
                         <ul class="flex-group">
                             <li>
                                 <a href="#" aria-label="Share on Twitte">
@@ -184,73 +215,73 @@
                             </li>
                         </ul>
                     </div>
-                    <!--Bookmark Article Icon-->
-                    <div class="article__bookmark grid-group">
+
+                    <!--Bookmark Icon-->
+                    <div class="header__bookmark grid-group">
                         <button class="flex-group" type="button" aria-label="Bookmark">
                             <i class="fa fa-bookmark"></i>
                             <span>Save</span>
                         </button>
                     </div>
+
                     <!--Meta data + Listen Btn-->
-                    <div class="article__meta-data flex-group--wrap">
+                    <div class="header__meta-data flex-group--wrap">
                         <div>
-                            <time class="article__publishing-date" datetime="2021-12-30" pubdate="pubdate">Dec 30, 2021</time><span class="footer__floating-period">&middot;</span>
+                            <time class="header__publishing-date" datetime="2021-12-30" pubdate="pubdate">Dec 30,
+                                2021</time><span class="header__floating-period">&middot;</span>
                         </div>
+
                         <div>
-                            <span><time class="article__reading-length" datetime="PT5M">5 mins</time> <span>read</span></span>&nbsp;<span class="footer__floating-period">&middot;</span>
+                            <span><time class="header__reading-length" datetime="PT5M">5 mins</time>
+                                <span>read</span></span>&nbsp;<span class="header__floating-period">&middot;</span>
                         </div>
-                        <button class="flex-group" type="button" aria-label="Listen to this article.">
+
+                        <button class="flex-group" type="button" aria-label="Listen to this header.">
                             <span><i class="fa fa-play"></i></span>
                             <span>Listen</span>
                         </button>
                     </div>
-                </footer>
+
+                </div>
 
                 <!--More Settings Icon-->
-                <div class="article__settings grid-group">
-                    <button type="button" aria-lable="More Settings">
+                <div class="header__settings flex-group">
+                    <button class="flex-group" type="button" aria-lable="More Settings">
                         <i class="fa fa-ellipsis"></i>
                     </button>
                 </div>
-            </div>
-
-
-
+            </header>
 
 
             <!--Introductory content of the article/webpage-->
             <div class="article__body">
-                <header>
 
-                    <!--Title-->
-                    <div class="tooltip-parent">
-                        <h1><mark>How I built my Startup as a solo developer</mark></h1>
-                        <div class="tooltip anim-up">
-                            <div class="tooltip-container flex-group">
-                                <button type="button" aria-label="Highlight this text.">
-                                    <i class="fa fa-highlighter"></i>
-                                </button>
-                                <button type="button" aria-label="Highlight this text.">
-                                    <i class="fa fa-comment"></i>
-                                </button>
-                                <button type="button" aria-label="Share on twitter.">
-                                    <i class="fa fa-twitter"></i>
-                                </button>
-                                <span class="tooltip-divider"></span>
-                                <span>Top highlight</span>
-                            </div>
+                <!--Title-->
+                <div class="tooltip-parent">
+                    <h1><mark>How I built my Startup as a solo developer</mark></h1>
+                    <div class="tooltip anim-up">
+                        <div class="tooltip-container flex-group">
+                            <button type="button" aria-label="Highlight this text.">
+                                <i class="fa fa-highlighter"></i>
+                            </button>
+                            <button type="button" aria-label="Highlight this text.">
+                                <i class="fa fa-comment"></i>
+                            </button>
+                            <button type="button" aria-label="Share on twitter.">
+                                <i class="fa fa-twitter"></i>
+                            </button>
+                            <span class="tooltip-divider"></span>
+                            <span>Top highlight</span>
                         </div>
                     </div>
-                    <!--Main Image-->
-                    <picture>
-                        <img src="https://miro.medium.com/max/1400/1*VfX9D92O5onZsL7QOyjxuw.gif"
-                            alt="Robert Downey Junior, as Tony Stark in the First Iron man movie hammering some metal in a dark cave with a flash-light behind him and a contained fire burning in the foreground to provide him with some light."
-                            width="700" height="293">
-                    </picture>
+                </div>
 
-
-
-                </header>
+                <!--Main Image-->
+                <picture>
+                    <img data-article="img" src="https://miro.medium.com/max/1400/1*VfX9D92O5onZsL7QOyjxuw.gif"
+                        alt="Robert Downey Junior, as Tony Stark in the First Iron man movie hammering some metal in a dark cave with a flash-light behind him and a contained fire burning in the foreground to provide him with some light."
+                        width="700" height="293">
+                </picture>
 
                 <div class="border-left">
                     <p>This article will detail my journey from a Full Stack Engineer to Startup founder over the course
@@ -277,9 +308,8 @@
                     get feedback. From side projects to startups!
                 </p>
 
-                <!--The data-pic attribute is to identify images specificially posted by the author to this particular article as opposed to surrounding images uploaded on the site by Medium.-->
                 <picture>
-                    <img data-pic="article-pic" src="https://miro.medium.com/max/1400/1*kb6yGdF2Biq6IgaE-RG7eA.png"
+                    <img data-article="article-pic" src="https://miro.medium.com/max/1400/1*kb6yGdF2Biq6IgaE-RG7eA.png"
                         alt="An ad for skillShack, a company whre you can learn how to code by building projects."
                         width="700" height="394">
                 </picture>
@@ -337,7 +367,7 @@
 
                 <!--The data-ul attribute is to identify ul's specificially posted by the author to this particular article as opposed to surrounding ul's on the page like on the navigation links in the main menu of the website-->
 
-                <ul data-ul="article-ul">
+                <ul data-article="ul">
                     <li>Easy to Scale and Deploy</li>
                     <li>A Good ORM with a strong API and support for formatted output on Raw Queries. </li>
                     <li>React on the frontend (it’s 2021 or 2022 by the time you read this)</li>
@@ -571,60 +601,10 @@
 
     </main>
 
-    <div class="right-panel">
-        <div class="right-panel__container grid-group">
-            <div class="flex-group">
-                <button>Resume Membership</button>
-                <label for="search"><span class="sr-only">Search</span>
-                    <i class="fa fa-search"></i>
-                    <input id="search" name="search-query" type="search" placeholder="Search">
-                </label>
-            </div>
 
-            <!--Author's profile-->
-            <section class="right-panel__author-info grid-group">
-                <a href="#">
-                    <picture data-user="profile-picture" class="article__picture">
-                        <img class="article__img"
-                            src="https://miro.medium.com/fit/c/96/96/1*4cojMNj2q8Zszp9mdvGeag.jpeg"
-                            alt="Profile picture of Sushrit Pasupuleti" width="88" height="88">
-                    </picture>
-                </a>
-                <div class="grid-group">
-                    <a href="#" class="right-panel__author-username" data-user="username">Sushrit Pasupuleti</a>
-                    <span class="followers">769 Followers</span>
-                </div>
-                <p data-user="bio">
-                    22 | Startup Founder | Fullstack Unicorn | Coder | Blogger | Speaker | Sketcher… err 🤔 and more 🙃. Building skillShack! <a href="https://sushritpasupuleti.github.io" target="_blank">https://sushritpasupuleti.github.io</a>
-                </p>
-                <div>
-                    <button type="button">
-                        Follow
-                    </button>
-                    <button type="button" aria-label="Subscribe to get an email whenever Sushrit posts another article.">
-                        <i class="fa fa-envelope"></i>
-                    </button>
-                </div>
-            </section>
+    <!--MOBILE TOPBAR NAVIGATION-->
+    <nav class="mobile-topbar-nav flex-group">
 
-            <footer class="right-panel__footer">
-                <ul class="flex-group--wrap">
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">Status</a></li>
-                    <li><a href="#">Write</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Text to speech</a></li>
-                </ul>
-            </footer>
-        </div>
-    </div>
-
-    <div class="topbar-nav flex-group">
-    
         <a href="index.html" aria-label="Medium logo">
             <svg viewBox="0 0 1043.63 592.71" class="dc bk">
                 <g data-name="Layer 2">
@@ -647,35 +627,131 @@
                 Open in App
             </button>
         </div>
-    
-    </div>
 
-    <div class="article__interactions">
-        <div class="article__interactions-container flex-group">
-            <button class="article__button" type="button" aria-label="How many like does this article have">
-                <i class="fa fa-hands-clapping"></i>
-                <span>3.9K</span>
-            </button>
-            <span class="line"></span>
-            <button class="article__button" type="button" aria-label="How many comments does this article have">
-                <i class="fa fa-comment"></i>
-                <span>33</span>
-            </button>
-            <span class="line"></span>
-            <button class="article__button" type="button" aria-label="More settings">
-                <i class="fa fa-ellipsis"></i>
-            </button>
+    </nav>
+
+
+    <!--MOBILE NAVIGATION-->
+    <nav class="mobile-nav flex-group" role="navigation">
+        <ul class="grid-group">
+            <li>
+                <a href="#" aria-label="Home">
+                    <i class="fa fa-home"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i aria-label="Search" class="fa fa-search"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i aria-label="Your stories" class="fa fa-bookmark"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <picture>
+                        <img class="mobile-nav__profile-img your-profile-img"
+                            src="https://miro.medium.com/fit/c/176/176/1*JNg7pW2VynQHE7hO0U-8cA.jpeg"
+                            alt="Your profile picture." width="40" height="40">
+                    </picture>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!--RIGHT PANEL-->
+    <div class="right-panel">
+        <div class="right-panel__container grid-group">
+
+            <!--Button and Input-->
+            <div class="flex-group">
+                <button class="btn black">Resume Membership</button>
+                <label for="search"><span class="sr-only">Search</span>
+                    <i class="fa fa-search"></i>
+                    <input id="search" name="search-query" type="search" placeholder="Search">
+                </label>
+            </div>
+
+            <!--Author's profile-->
+            <section class="right-panel__author-info grid-group">
+                <a href="#">
+                    <picture data-user="profile-picture" class="article__picture">
+                        <img class="article__img other-user-profile-img"
+                            src="https://miro.medium.com/fit/c/96/96/1*4cojMNj2q8Zszp9mdvGeag.jpeg"
+                            alt="Profile picture of Sushrit Pasupuleti" width="88" height="88">
+                    </picture>
+                </a>
+                <div class="grid-group">
+                    <a href="#" class="right-panel__author-username" data-user="username">Sushrit Pasupuleti</a>
+                    <a href="#" data-user="follower-count"><span class="followers">769 Followers</span></a>
+                </div>
+                <p data-user="bio">
+                    22 | Startup Founder | Fullstack Unicorn | Coder | Blogger | Speaker | Sketcher… err 🤔 and more 🙃.
+                    Building skillShack! <a href="https://sushritpasupuleti.github.io"
+                        target="_blank">https://sushritpasupuleti.github.io</a>
+                </p>
+                <section class="right-panel__button-section flex-group">
+                    <button class="btn green" type="button">Follow</button>
+                    <button class="btn green" type="button"
+                        aria-label="Subscribe to get an email whenever Sushrit posts another article.">
+                        <i class="fa fa-envelope"></i>
+                    </button>
+                </section>
+            </section>
+
+            <!--Footer-->
+            <footer class="right-panel__footer flex-group">
+                <ul class="flex-group--wrap">
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Status</a></li>
+                    <li><a href="#">Write</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Text to speech</a></li>
+                </ul>
+
+                <p><small>This content is the property of <a
+                            href="https://medium.com/@sushrit.pk21/how-i-built-my-startup-as-a-solo-developer-8561bf7eebde"
+                            target="_blank">Medium.com</a></small>
+                </p>
+            </footer>
+
         </div>
     </div>
 
-    <div class="footer-grid grid-group">
-        <div></div>
-        <footer class="grid-group">
-            <p><small>This content is the property of <a href="https://medium.com/@sushrit.pk21/how-i-built-my-startup-as-a-solo-developer-8561bf7eebde" target="_blank">Medium.com</a></small>
-            </p>
-        </footer>
-        <div></div>
+    <!--ARTICLE INTERACTIONS-->
+    <div class="article__interactions-layout grid-group">
+
+        <div class="invisible"></div>
+
+        <div class="article__interactions">
+            <div class="article__interactions-container flex-group">
+                <button class="article__button" type="button" aria-label="How many like does this article have">
+                    <i class="fa fa-hands-clapping"></i>
+                    <span>3.9K</span>
+                </button>
+                <span class="divider"></span>
+                <button class="article__button" type="button" aria-label="How many comments does this article have">
+                    <i class="fa fa-comment"></i>
+                    <span>33</span>
+                </button>
+                <span class="line"></span>
+                <button class="article__button" type="button" aria-label="More settings">
+                    <i class="fa fa-ellipsis"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="invisible"></div>
+
     </div>
+
 
     <noscript>
         <p>

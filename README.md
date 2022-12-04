@@ -9,6 +9,9 @@ So, I've decided to stop trying to speedrun through complex projects that will o
 
 For this project, I decided to code three [Medium](https://medium.com/) articles, which I believe, although not enough to solidify the new things I have learned about semantic HTML into my coding brain, it would most definitely be <strong>good practice</strong>, and something that I can update if needs be the more I learn, and also provide me a <strong>template to refer to in future builds</strong>.
 
+## What I Would've Done Differently
+- I was unable to get the link tags to fit the width of the menu linlks container in the main nav so to overcome this issue I just gave them borders to give them more surface area for people to click on, however, I would've liked a better solution for this that's more robust and dynamic.  
+
 ## Fixes (or at least what I believe to be fixes)
 I've been using Medium for a long time but never actually thought about the minor issues on the site, whether it be spacing issues, or hover interactions. I'm not saying that I'm anywhere near the level of the people working on the site, but I did make some minor tweaks that I think although noticeable to the majority of viewers unless you analyse the design of the website, still were tweaks that would improve the design as a whole.
 
