@@ -586,7 +586,7 @@ main {
 
 /*Article*/
 article {
-    margin-top: 1.5rem;
+    margin-block: 1.5rem calc(8vh + 1.5rem);
     width: min(700px, calc(75% + 1em));
 
     margin-inline: auto;
