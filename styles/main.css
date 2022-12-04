@@ -1238,6 +1238,7 @@ small {
         margin-top: 10vh;
 
         align-items: start;
+        flex-basis: 1fr 30px;
     }
 
     .header__container {
