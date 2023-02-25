@@ -1,7 +1,7 @@
 Medium Article
 ==============
 
-I built out this [Medium article by Sushrit Pasupuleti](https://medium.com/@sushrit.pk21/how-i-built-my-startup-as-a-solo-developer-8561bf7eebde) using HTML, CSS and JavaScript. You can find the [full live version here](https://coding-this-medium-article-ep1.netlify.app/)
+I built out this [Medium article by Sushrit Pasupuleti](https://medium.com/@sushrit.pk21/how-i-built-my-startup-as-a-solo-developer-8561bf7eebde) using HTML and CSS. You can find the [full live version here](https://coding-this-medium-article-ep1.netlify.app/)
 
 Why Did I Do This? 🤷🏾‍♂️
 --------------------------
