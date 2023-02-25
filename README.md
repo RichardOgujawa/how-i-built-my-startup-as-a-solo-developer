@@ -32,4 +32,3 @@ Technology Used 🎮
 
 *   HTML
 *   CSS
-*   JavaScript
